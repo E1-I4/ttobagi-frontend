@@ -1,6 +1,9 @@
 /* global kakao */
-
 import React, { useEffect } from "react";
+import styled from "styled-components";
+import AppLayout from "../components/AppLayout";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const { kakao } = window;
 
@@ -74,20 +77,39 @@ const Map = () => {
 
   return (
     <div className="Map">
-      <span>서식지 지도</span>
-      <div
-        className="MapContainer"
-        id="map"
-        style={{ width: 400, height: 400 }}
-      ></div>
+      <AppLayout>
+        <Content>
+          <a href="/" style={{ marginTop: 40 }}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </a>
+          <h2 style={{ marginTop: 30, marginBottom: 30 }}>
+            제주도에서
+            <br></br>
+            멸종위기동물을 찾아봐요
+          </h2>
+        </Content>
+        <MapContainer id="map"></MapContainer>
+      </AppLayout>
     </div>
   );
 };
 
 export default Map;
 
-// 고정 핀 찍기
+let Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-contents: left;
+  width: 80vw;
+`;
 
+let MapContainer = styled.div`
+  border-radius: 20px;
+  width: 80vw;
+  height: 55vh;
+`;
+
+// 고정 핀 찍기
 // var markerPosition = new kakao.maps.LatLng(33.385221, 126.524237);
 // var marker = new kakao.maps.Marker({
 //   position: markerPosition,
@@ -95,7 +117,6 @@ export default Map;
 // marker.setMap(map);
 
 // 지도 그리기
-
 // useEffect(() => {
 //   const container = document.getElementById("map");
 //   const options = {
