@@ -15,11 +15,6 @@ const Recycle = () => {
     console.log(type);
   };
 
-  // if (dragFunction === true) {
-  //   const navigateToAchieve = () => {
-  //     navigate("/");
-  //   };
-  // }
   useEffect(() => {
     document.getElementById("petbtn").addEventListener("drop", function () {
       navigate(`/achieve`);
@@ -41,8 +36,8 @@ const Recycle = () => {
         >
           {" "}
         </StyledPetBin>
-        <img src={Pet} alt="pet" draggable></img>
-        {/* <span>투명한 페트병을 버려 볼까요?</span> */}
+        <PetImg src={Pet} alt="pet" draggable></PetImg>
+        <Guide>투명한 페트병을 버려 볼까요?</Guide>
       </AppLayout>
     </div>
   );
@@ -51,29 +46,15 @@ const Recycle = () => {
 export default Recycle;
 
 let StyledPetBin = styled(PetBin)`
-  border: 1px solid gray;
+  margin: 80px 0 10px 0;
 `;
 
-// let mover = styled.div`
-//   width: 100px;
-//   height: 125px;
-//   background: #febf00;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 1.3rem;
-//   font-weight: bold;
+let PetImg = styled.img`
+  margin-left: 40vw;
+  margin-bottom: 70px;
+`;
 
-//   position: absolute;
-//   left: 50px;
-//   top: 50px;
-
-//   user-select: none;
-
-//   /*  drag cursor   */
-//   &:onClick
-//   cursor: grab;
-
-//   &:active
-//   cursor: grabbing;
-// `;
+let Guide = styled.span`
+  font-size: 20px;
+  font-weight: 700;
+`;

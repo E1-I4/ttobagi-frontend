@@ -61,9 +61,9 @@ let Content = styled.div`
 let ImgList = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   gap: 15px;
   width: 85vw;
-  height: 130vh;
 `;
 
 let ImgCard = styled.div`
@@ -72,4 +72,5 @@ let ImgCard = styled.div`
   &:hover {
     cursor: pointer;
   }
+  height: 30vh;
 `;

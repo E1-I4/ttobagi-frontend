@@ -1,8 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
+import { useNavigate } from "react-router-dom";
 
 const Discover = () => {
+  const navigate = useNavigate();
+  const navigateToRecyclePage = () => {
+    navigate("/recycle");
+  };
+
   return (
     <div className="Discover">
       <AppLayout>
@@ -13,8 +19,8 @@ const Discover = () => {
             붉은박쥐를 발견했어요
           </h2>
         </Title>
-        <ChaImg href="/recycle"></ChaImg>
-        <Button>페트병 치워주기</Button>
+        <ChaImg></ChaImg>
+        <Button onClick={navigateToRecyclePage}>페트병 치워주기</Button>
       </AppLayout>
     </div>
   );
@@ -33,13 +39,13 @@ let Title = styled.div`
 let ChaImg = styled.img`
   border-radius: 20px;
   width: 85vw;
-  height: 45vh;
+  height: 55vh;
   margin-bottom: 20px;
 `;
 
 let Button = styled.button`
   font-size: 20px;
-  background: lightgray;
+  background: #eFF9900;
   border: none;
   border-radius: 20px;
   margin-top: 10px;
@@ -49,4 +55,7 @@ let Button = styled.button`
   }
   width: 85vw;
   height: 60px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--darkgray);
 `;
