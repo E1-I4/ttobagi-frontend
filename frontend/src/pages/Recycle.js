@@ -17,8 +17,8 @@ export default Recycle;
 
 let BinImg = styled.img`
   border-radius: 20px;
-  width: 80vw;
-  height: 75vh;
+  width: 85vw;
+  height: 80vh;
   margin-bottom: 20px;
   margin: 20px 0 40px 0;
 `;

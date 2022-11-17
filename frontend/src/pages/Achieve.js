@@ -8,12 +8,15 @@ const Achieve = () => {
   return (
     <div className="Achieve">
       <AppLayout>
-        <a href="/">
-          <FontAwesomeIcon icon={faHouse} />
-        </a>
-        <Title>
-          <h2 style={{ margin: 0 }}>붉은박쥐를 수집했어요!</h2>
-        </Title>
+        <Content>
+          <HomeIcon href="/" style={{ marginTop: 40, marginBottom: 10 }}>
+            <FontAwesomeIcon icon={faHouse} />
+          </HomeIcon>
+          <Title>
+            <h2 style={{ margin: 0 }}>붉은박쥐를 수집했어요!</h2>
+          </Title>
+        </Content>
+
         <ChaImg src="#"></ChaImg>
         <InfoBox>캐릭터 설명</InfoBox>
       </AppLayout>
@@ -23,14 +26,27 @@ const Achieve = () => {
 
 export default Achieve;
 
+let Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+`;
+
+let HomeIcon = styled.a`
+  color: black;
+  display: flex;
+  justify-content: flex-end;
+`;
+
 let Title = styled.div`
-  text-align: center;
-  margin: 50px 0 30px 0;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 30px 0;
 `;
 
 let ChaImg = styled.img`
   border-radius: 20px;
-  width: 80vw;
+  width: 85vw;
   height: 45vh;
   margin-bottom: 20px;
 `;
@@ -43,19 +59,5 @@ let InfoBox = styled.div`
   margin-top: 10px;
   padding: 10px;
   width: 80vw;
-  height: 25vh;
-`;
-
-let Button = styled.button`
-  font-size: 20px;
-  background: transparent;
-  border: 1px solid gray;
-  border-radius: 10px;
-  margin-top: 10px;
-  padding: 10px;
-  &:hover {
-    cursor: pointer;
-  }
-  width: 80vw;
-  height: 10vh;
+  height: 20vh;
 `;

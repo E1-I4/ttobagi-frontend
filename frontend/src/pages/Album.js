@@ -8,16 +8,16 @@ const Album = () => {
   return (
     <div className="Album">
       <AppLayout>
-        <a href="/">
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </a>
-        <>
-          <h2 style={{ marginTop: 30, marginBottom: 30 }}>
+        <Content>
+          <a href="/" style={{ marginTop: 40, marginBottom: 10 }}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </a>
+          <h2 style={{ marginBottom: 30 }}>
             지금까지 수집한
             <br></br>
             동물들이예요
           </h2>
-        </>
+        </Content>
         <ImgList>
           <ImgCard>
             <img src="#" href="/info"></img>
@@ -51,17 +51,24 @@ const Album = () => {
 
 export default Album;
 
+let Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-contents: left;
+  width: 85vw;
+`;
+
 let ImgList = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  width: 90vw;
+  gap: 15px;
+  width: 85vw;
   height: 130vh;
 `;
 
 let ImgCard = styled.div`
   background: lightgray;
-  border-radius: 10px;
+  border-radius: 25px;
   &:hover {
     cursor: pointer;
   }

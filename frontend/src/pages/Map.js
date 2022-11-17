@@ -79,10 +79,10 @@ const Map = () => {
     <div className="Map">
       <AppLayout>
         <Content>
-          <a href="/" style={{ marginTop: 40 }}>
+          <a href="/" style={{ marginTop: 40, marginBottom: 10 }}>
             <FontAwesomeIcon icon={faChevronLeft} />
           </a>
-          <h2 style={{ marginTop: 30, marginBottom: 30 }}>
+          <h2 style={{ marginBottom: 30 }}>
             제주도에서
             <br></br>
             멸종위기동물을 찾아봐요
@@ -100,13 +100,13 @@ let Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-contents: left;
-  width: 80vw;
+  width: 85vw;
 `;
 
 let MapContainer = styled.div`
   border-radius: 20px;
-  width: 80vw;
-  height: 55vh;
+  width: 85vw;
+  height: 50vh;
 `;
 
 // 고정 핀 찍기
