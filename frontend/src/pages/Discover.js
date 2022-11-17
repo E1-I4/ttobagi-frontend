@@ -13,7 +13,7 @@ const Discover = () => {
             붉은박쥐를 발견했어요
           </h2>
         </Title>
-        <ChaImg src="#" href="/recycle"></ChaImg>
+        <ChaImg href="/recycle"></ChaImg>
         <Button>페트병 치워주기</Button>
       </AppLayout>
     </div>
