@@ -5,6 +5,8 @@ import AppLayout from "../components/AppLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
+import Info from "./Info";
+
 const { kakao } = window;
 
 const Map = () => {
@@ -123,6 +125,11 @@ const Map = () => {
         content: "<div>큰말똥가리</div>",
         latlng: new kakao.maps.LatLng(33.265844, 126.402451),
       },
+      {
+        title: "제주특별자치도 서귀포시 성산읍 동류암로 20",
+        content: "<div>테스트</div>",
+        latlng: new kakao.maps.LatLng(33.45016393489062, 126.91834162629523),
+      },
     ];
 
     // 마커 이미지의 이미지 주소입니다
@@ -175,6 +182,29 @@ const Map = () => {
         infowindow.close();
       };
     }
+
+    ///////////////// 지도 도감 연동 테스트 /////////////////
+
+    //두 지점 간의 거리 계산
+
+    // function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+    //   var R = 6371; // Radius of the earth in km
+    //   var dLat = deg2rad(lat2 - lat1); // deg2rad below
+    //   var dLon = deg2rad(lon2 - lon1);
+    //   var a =
+    //     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    //     Math.cos(deg2rad(lat1)) *
+    //       Math.cos(deg2rad(lat2)) *
+    //       Math.sin(dLon / 2) *
+    //       Math.sin(dLon / 2);
+    //   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    //   var d = R * c; // Distance in km
+    //   return d;
+    // }
+
+    // function deg2rad(deg) {
+    //   return deg * (Math.PI / 180);
+    // }
   }, []);
 
   return (
@@ -189,8 +219,12 @@ const Map = () => {
             <br></br>
             멸종위기동물을 찾아봐요
           </h2>
+          <span>내 위치가 표시될 때까지 잠시만 기다려주세요</span>
+          <br></br>
         </Content>
         <MapContainer id="map"></MapContainer>
+        {/* <div id="location">여러분의 위치가 여기에 나타날 것입니다.</div>
+        <div id="distance">서울시청과의 거리가 여기에 나타날 것입니다.</div> */}
       </AppLayout>
     </div>
   );
