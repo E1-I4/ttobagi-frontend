@@ -1,61 +1,58 @@
-// import React, { useState } from "react";
-// import styled from "styled-components";
-// import AppLayout from "../components/AppLayout";
-// import "../styles/theme.css";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-// import { useNavigate } from "react-router-dom";
-// import Draggable from "react-draggable";
-// import Dropzone, { useDropzone } from "react-dropzone";
-// import { ReactComponent as PetBin } from "../assets/svg/pet_bin.svg";
-// import Pet from "../assets/img/pet.png";
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import AppLayout from "../components/AppLayout";
+import "../styles/theme.css";
+import { useNavigate } from "react-router-dom";
+import { ReactComponent as PetBin } from "../assets/svg/pet_bin.svg";
+import Pet from "../assets/img/pet.png";
 
-// const Recycle = () => {
-// const navigate = useNavigate();
-// // 드랍을 하면 바로 넘어가는 걸로 하자.
-// const navigateToAchieve = () => {
-// navigate("/achieve");
-// };
-//드랍존(태그로) -> 드랍앤드
+const Recycle = () => {
+  const navigate = useNavigate();
 
-// const [position, setPosition] = useState({ x: 0, y: 0 }); // box의 포지션 값
-// 업데이트 되는 값을 set 해줌
-// x: {position.x.toFixed(0)}, y: {position.y.toFixed(0)}
+  const dragFunction = (event, type) => {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log(type);
+  };
 
-// const trackPos = (data) => {
-//   setPosition({ x: data.x, y: data.y });
-// };
+  // if (dragFunction === true) {
+  //   const navigateToAchieve = () => {
+  //     navigate("/");
+  //   };
+  // }
+  useEffect(() => {
+    document.getElementById("petbtn").addEventListener("drop", function () {
+      navigate(`/achieve`);
+    });
+  });
 
-// const { getRootProps, getInputProps, isDragActive } = useDropzone();
-// return (
-//   <div className="Recycle">
-//     <AppLayout>
-{
-  /* <Dropzone ref={dropzoneRef}> */
-}
-// <PetBin />
-{
-  /* </Dropzone> */
-}
-// <Draggable
-// nodeRef={nodeRef}
-// onDrag={(e, data) => trackPos(data)}
-// target={this.state.ref}
-// onStart={this.onStart}
-// onEnd={this.onEnd}
-// position={this.state.itemLocation}
-// inverted={this.props.inverted}
-//         >
-//           <img src={Pet} alt="pet"></img>
-//         </Draggable>
+  return (
+    <div className="Recycle">
+      <AppLayout>
+        <StyledPetBin
+          id="petbtn"
+          onDragOver={(event) => {
+            return dragFunction(event, "over");
+          }}
+          onDrop={(event) => dragFunction(event, "drop")}
+          onDragEnter={(event) => dragFunction(event, "enter")}
+          onDragLeave={(event) => dragFunction(event, "leave")}
+          className="dragAndDrop"
+        >
+          {" "}
+        </StyledPetBin>
+        <img src={Pet} alt="pet" draggable></img>
+        {/* <span>투명한 페트병을 버려 볼까요?</span> */}
+      </AppLayout>
+    </div>
+  );
+};
 
-//         <span>투명한 페트병을 버려 볼까요?</span>
-//       </AppLayout>
-//     </div>
-//   );
-// };
+export default Recycle;
 
-// export default Recycle;
+let StyledPetBin = styled(PetBin)`
+  border: 1px solid gray;
+`;
 
 // let mover = styled.div`
 //   width: 100px;
