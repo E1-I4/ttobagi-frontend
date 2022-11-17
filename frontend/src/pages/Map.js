@@ -9,7 +9,8 @@ const { kakao } = window;
 
 const Map = () => {
   useEffect(() => {
-    // useEffect
+    ////////// 카카오맵 생성 ////////////////
+
     var mapContainer = document.getElementById("map"), // 지도를 표시할 div
       mapOption = {
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -17,6 +18,8 @@ const Map = () => {
       };
 
     var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+    /////////// 현위치 (geolocation) 구현 ////////////////
 
     // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
     if (navigator.geolocation) {
@@ -63,17 +66,57 @@ const Map = () => {
       // 지도 중심좌표를 접속위치로 변경합니다
       map.setCenter(locPosition);
     }
-  }, []);
 
-  // useEffect(() => {
-  //   const container = document.getElementById("map");
-  //   const options = {
-  //     center: new window.kakao.maps.LatLng(33.385221, 126.524237),
-  //     level: 11,
-  //   };
-  //   const map = new window.kakao.maps.Map(container, options);
-  //   console.log("loading kakaomap");
-  // }, []);
+    /////////// 마커(핀) 여러 개 생성 ////////////////
+
+    // 마커를 표시할 위치와 title 객체 배열입니다
+    var positions = [
+      {
+        title: "붉은박쥐",
+        latlng: new kakao.maps.LatLng(33.424496, 126.558734),
+      },
+      {
+        title: "제주검독수리",
+        latlng: new kakao.maps.LatLng(33.376665, 126.542212),
+      },
+      {
+        title: "비바리뱀",
+        latlng: new kakao.maps.LatLng(33.34696, 126.545547),
+      },
+      {
+        title: "나팔고둥",
+        latlng: new kakao.maps.LatLng(126.545547, 126.94076),
+      },
+      {
+        title: "갯게",
+        latlng: new kakao.maps.LatLng(33.218044, 126.264616),
+      },
+      {
+        title: "팔색조",
+        latlng: new kakao.maps.LatLng(33.452352, 126.917965),
+      },
+    ];
+
+    // 마커 이미지의 이미지 주소입니다
+    var imageSrc =
+      "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+    for (var i = 0; i < positions.length; i++) {
+      // 마커 이미지의 이미지 크기 입니다
+      var imageSize = new kakao.maps.Size(24, 35);
+
+      // 마커 이미지를 생성합니다
+      var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+      // 마커를 생성합니다
+      var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng, // 마커를 표시할 위치
+        title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+        image: markerImage, // 마커 이미지
+      });
+    }
+  }, []);
 
   return (
     <div className="Map">

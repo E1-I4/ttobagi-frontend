@@ -15,4 +15,5 @@ let Box = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  color: var(--darkgray);
 `;

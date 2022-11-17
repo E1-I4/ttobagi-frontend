@@ -51,4 +51,6 @@ let Button = styled.button`
   }
   width: 85vw;
   height: 60px;
+  font-size: 20px;
+  font-weight: 700;
 `;
