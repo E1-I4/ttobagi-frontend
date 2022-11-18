@@ -22,8 +22,10 @@ const Home = () => {
             <MainLogo />
             <span>제주도의 멸종위기동물을 위한 도감</span>
           </Title>
-          <Button onClick={navigateToMapPage}>서식지도</Button>
-          <Button onClick={navigateToAlbumPage}>도감</Button>
+          <>
+            <Button onClick={navigateToMapPage}>서식지도</Button>
+            <Button onClick={navigateToAlbumPage}>도감</Button>
+          </>
         </AppLayout>
       </Background>
     </div>
@@ -56,7 +58,7 @@ let Button = styled.button`
     cursor: pointer;
     background: #eFF9900;
   }
-  width: 85vw;
+  width: 70vw;
   height: 60px;
   font-size: 20px;
   font-weight: 700;
