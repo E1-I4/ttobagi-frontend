@@ -23,10 +23,7 @@ const AlbumItem = ({ animal }) => {
       <div className="eachAnimal">
         <a onClick={onClick} id={id}>
           {name}
-          <img
-            src="https://post-phinf.pstatic.net/MjAyMDAyMjlfMjY4/MDAxNTgyOTU0Nzg3MjQ4.PBMFV4WrSJmeSUJ56c4C7Vkz_SsQlJ1SByKU18kkJh0g.T7mQnadCWVtEZ448AGk_9kG1HFBAzdztXZcBjvSbduwg.JPEG/%EA%B3%A0%EC%96%91%EC%9D%B4_%EB%82%98%EC%9D%B41.jpg?type=w1200"
-            alt={name}
-          />
+          <img src={`../assets/img/index${id}`} alt={name} />
         </a>
       </div>
     </ImgCard>
