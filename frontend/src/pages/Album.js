@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import AlbumItem from "./AlbumItem";
 
-const Album = () => {
+// const Album = () => {
+// animal id, animal img
+
+const ImgList = () => {
+  const [animals, setAnimals] = useState(null);
+  // const [loading, setLoading] = useState(false);
+
+  const fetchData = async () => {
+    const { data } = await axios.get("https://www.ttobagi.site/api/animal/");
+    setAnimals(data);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log(animals);
+
   return (
     <div className="Album">
       <AppLayout>
@@ -18,38 +36,21 @@ const Album = () => {
             동물들이예요
           </h2>
         </Content>
-        <ImgList>
-          <ImgCard>
-            <img src="#" href="/info"></img>
-          </ImgCard>
-          <ImgCard>
-            <img src="#" href="/info"></img>
-          </ImgCard>
-          <ImgCard>
-            <img src="#" href="/info"></img>
-          </ImgCard>
-          <ImgCard>
-            <img src="#" href="/info"></img>
-          </ImgCard>
-          <ImgCard>
-            <img src="#" href="/info"></img>
-          </ImgCard>
-          <ImgCard>
-            <img src="#" href="/info"></img>
-          </ImgCard>
-          <ImgCard>
-            <img src="#" href="/info"></img>
-          </ImgCard>
-          <ImgCard>
-            <img src="#" href="/info"></img>
-          </ImgCard>
-        </ImgList>
+
+        <ImgListBlock>
+          <div>
+            {animals?.length &&
+              animals.map((animal) => (
+                <AlbumItem key={animal.name} animal={animal} />
+              ))}
+          </div>
+        </ImgListBlock>
       </AppLayout>
     </div>
   );
 };
 
-export default Album;
+export default ImgList;
 
 let Content = styled.div`
   display: flex;
@@ -58,19 +59,10 @@ let Content = styled.div`
   width: 85vw;
 `;
 
-let ImgList = styled.div`
+let ImgListBlock = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(8, 1fr);
   gap: 15px;
   width: 85vw;
-`;
-
-let ImgCard = styled.div`
-  background: lightgray;
-  border-radius: 25px;
-  &:hover {
-    cursor: pointer;
-  }
-  height: 30vh;
+  height: 130vh;
 `;

@@ -3,8 +3,14 @@ import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router-dom";
 
 const Info = () => {
+  const location = useLocation();
+  const { id, name, image, description } = location.state;
+  console.log(description);
+  const des = JSON.parse(description);
+  // console.log(description);
   return (
     <div className="Info">
       <AppLayout>
@@ -13,9 +19,9 @@ const Info = () => {
             <FontAwesomeIcon icon={faChevronLeft} />
           </a>
         </Content>
-        <ChaImg src="#"></ChaImg>
-        <h2 style={{ marginTop: 20, marginBottom: 20 }}>붉은박쥐</h2>
-        <InfoBox>캐릭터 설명</InfoBox>
+        <ChaImg src={image}></ChaImg>
+        <h2 style={{ marginTop: 20, marginBottom: 20 }}>{name}</h2>
+        <InfoBox>{description}</InfoBox>
       </AppLayout>
     </div>
   );
