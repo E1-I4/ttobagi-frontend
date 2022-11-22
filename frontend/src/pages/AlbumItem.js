@@ -20,12 +20,9 @@ const AlbumItem = ({ animal }) => {
 
   return (
     <ImgCard>
-      <div className="eachAnimal">
-        <a onClick={onClick} id={id}>
-          {name}
-          <img src={`../assets/img/index${id}`} alt={name} />
-        </a>
-      </div>
+      <a onClick={onClick} id={id}>
+        <img src={image} alt={name} description={description} id={id} />
+      </a>
     </ImgCard>
   );
 };
@@ -33,8 +30,9 @@ const AlbumItem = ({ animal }) => {
 export default AlbumItem;
 
 let ImgCard = styled.div`
-  background: lightgray;
   border-radius: 25px;
+  width: 100%;
+  height: 100%;
   &:hover {
     cursor: pointer;
   }
