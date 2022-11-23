@@ -18,17 +18,12 @@ const Info = () => {
             <FontAwesomeIcon icon={faChevronLeft} />
           </a>
         </Content>
-        <ChaImg>
-          <img src={image} alt={name} />
-        </ChaImg>
+        <ChaImg src={image} alt={name}></ChaImg>
         <h2 style={{ marginTop: 20, marginBottom: 20 }}>{name}</h2>
         <InfoBox>
           {description.split("\\").map((item) => (
             <Li>{item}</Li>
           ))}
-          {/* {description.map((item) => (
-            <li>{item.split("\\")}</li>
-          ))} */}
         </InfoBox>
       </AppLayout>
     </div>
@@ -44,11 +39,10 @@ let Content = styled.div`
   width: 85vw;
 `;
 
-let ChaImg = styled.div`
+let ChaImg = styled.img`
   border-radius: 25px;
-  width: 60vw;
-  height: 40vh;
-  margin-bottom: 20px;
+  width: 80vw;
+  height: 50vh;
 `;
 
 let InfoBox = styled.div`
@@ -62,4 +56,6 @@ let InfoBox = styled.div`
   height: 25vh;
 `;
 
-let Li = styled.ol``;
+let Li = styled.ol`
+  margin-left: -25px;
+`;

@@ -19,17 +19,20 @@ const AlbumItem = ({ animal }) => {
   };
 
   return (
-    <ImgCard>
-      <a onClick={onClick} id={id}>
-        <img src={image} alt={name} description={description} id={id} />
-      </a>
-    </ImgCard>
+    <a onClick={onClick} id={id}>
+      <ImgCard
+        src={image}
+        alt={name}
+        description={description}
+        id={id}
+      ></ImgCard>
+    </a>
   );
 };
 
 export default AlbumItem;
 
-let ImgCard = styled.div`
+let ImgCard = styled.img`
   border-radius: 25px;
   width: 100%;
   height: 100%;
