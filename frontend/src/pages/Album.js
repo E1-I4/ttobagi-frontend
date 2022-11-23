@@ -6,12 +6,8 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import AlbumItem from "./AlbumItem";
 
-// const Album = () => {
-// animal id, animal img
-
-const ImgList = () => {
+const Album = () => {
   const [animals, setAnimals] = useState(null);
-  // const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
     const { data } = await axios.get("https://www.ttobagi.site/api/animal/");
@@ -38,19 +34,17 @@ const ImgList = () => {
         </Content>
 
         <ImgListBlock>
-          <div>
-            {animals?.length &&
-              animals.map((animal) => (
-                <AlbumItem key={animal.name} animal={animal} />
-              ))}
-          </div>
+          {animals?.length &&
+            animals.map((animal) => (
+              <AlbumItem key={animal.name} animal={animal} />
+            ))}
         </ImgListBlock>
       </AppLayout>
     </div>
   );
 };
 
-export default ImgList;
+export default Album;
 
 let Content = styled.div`
   display: flex;

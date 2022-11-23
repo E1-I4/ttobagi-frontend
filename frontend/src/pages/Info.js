@@ -7,21 +7,24 @@ import { useLocation } from "react-router-dom";
 
 const Info = () => {
   const location = useLocation();
-  const { id, name, image, description } = location.state;
-  console.log(description);
-  const des = JSON.parse(description);
-  // console.log(description);
+
+  const { name, image, description } = location.state;
+
   return (
     <div className="Info">
       <AppLayout>
         <Content>
-          <a href="/" style={{ marginTop: 40, marginBottom: 20 }}>
+          <a href="/album" style={{ marginTop: 40, marginBottom: 20 }}>
             <FontAwesomeIcon icon={faChevronLeft} />
           </a>
         </Content>
-        <ChaImg src={image}></ChaImg>
+        <ChaImg src={image} alt={name}></ChaImg>
         <h2 style={{ marginTop: 20, marginBottom: 20 }}>{name}</h2>
-        <InfoBox>{description}</InfoBox>
+        <InfoBox>
+          {description.split("\\").map((item) => (
+            <Li>{item}</Li>
+          ))}
+        </InfoBox>
       </AppLayout>
     </div>
   );
@@ -38,9 +41,8 @@ let Content = styled.div`
 
 let ChaImg = styled.img`
   border-radius: 25px;
-  width: 60vw;
-  height: 40vh;
-  margin-bottom: 20px;
+  width: 80vw;
+  height: 50vh;
 `;
 
 let InfoBox = styled.div`
@@ -52,4 +54,8 @@ let InfoBox = styled.div`
   padding: 10px;
   width: 80vw;
   height: 25vh;
+`;
+
+let Li = styled.ol`
+  margin-left: -25px;
 `;
