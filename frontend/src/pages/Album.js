@@ -17,8 +17,6 @@ const Album = () => {
     fetchData();
   }, []);
 
-  console.log(animals);
-
   return (
     <div className="Album">
       <AppLayout>
