@@ -49,9 +49,9 @@ const Recycle = () => {
   return (
     <div className="Recycle">
       <AppLayout>
-        <StyledPetBin
-          src={target}
-          alt={name}
+        <FakeTarget
+          // src={target}
+          // alt={name}
           id="petbtn"
           onDragOver={(event) => {
             return dragFunction(event, "over");
@@ -61,9 +61,9 @@ const Recycle = () => {
           onDragLeave={(event) => dragFunction(event, "leave")}
           className="dragAndDrop"
         >
-          {" "}
-        </StyledPetBin>
-        <PetImg src={trash} alt={name} draggable></PetImg>
+          <Target src={target} alt={name}></Target>
+        </FakeTarget>
+        <Trash src={trash} alt={name} draggable></Trash>
         <Guide>{trash_description}</Guide>
       </AppLayout>
     </div>
@@ -72,11 +72,25 @@ const Recycle = () => {
 
 export default Recycle;
 
-let StyledPetBin = styled.div`
+// 이름 맞게 수정했습니다 그냥 <FakeTarget> 안에 <Target>으로 이미지 넣어준게 답니다..
+// 조금씩 이미지들이 위치가 다른데 디자이너에게 빌고빌어 target과 trash 위치 통일하는걸로 조정하시면 어떠한지..
+// 확인하시고 요기 다섯개 주석들은 삭제해주세용
+
+// StyledPetBin -> FakeTarget
+// PetImg -> Trash
+
+let FakeTarget = styled.div`
   margin: 80px 0 10px 0;
+  width: 80vw;
+  height: 40vh;
 `;
 
-let PetImg = styled.img`
+let Target = styled.img`
+  // margin: 50px 0 10px 0;
+  width: 100%;
+`;
+
+let Trash = styled.img`
   width: 40vw;
   margin-left: 40vw;
   margin-bottom: 70px;
