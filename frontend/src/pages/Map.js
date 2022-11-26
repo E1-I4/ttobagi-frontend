@@ -104,7 +104,7 @@ const Map = ({ animals }) => {
         id: 4,
         title: "제주특별자치도 서귀포시 성산읍 성산리 78",
         content: "<div>나팔고둥</div>",
-        latlng: new kakao.maps.LatLng(126.545547, 126.94076),
+        latlng: new kakao.maps.LatLng(33.545547, 126.94076),
       },
       {
         id: 5,

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import "../styles/theme.css";
 import { useNavigate, useLocation } from "react-router-dom";
-import { ReactComponent as PetBin } from "../assets/svg/pet_bin.svg";
+// import { ReactComponent as PetBin } from "../assets/svg/pet_bin.svg";
 
 const Recycle = () => {
   const location = useLocation();
@@ -50,6 +50,8 @@ const Recycle = () => {
     <div className="Recycle">
       <AppLayout>
         <StyledPetBin
+          src={target}
+          alt={name}
           id="petbtn"
           onDragOver={(event) => {
             return dragFunction(event, "over");
@@ -62,7 +64,7 @@ const Recycle = () => {
           {" "}
         </StyledPetBin>
         <PetImg src={trash} alt={name} draggable></PetImg>
-        <Guide>{trash_description}투명한 페트병을 버려볼까요?</Guide>
+        <Guide>{trash_description}</Guide>
       </AppLayout>
     </div>
   );
@@ -70,7 +72,7 @@ const Recycle = () => {
 
 export default Recycle;
 
-let StyledPetBin = styled(PetBin)`
+let StyledPetBin = styled.div`
   margin: 80px 0 10px 0;
 `;
 
