@@ -10,7 +10,19 @@ const Album = () => {
   const [animals, setAnimals] = useState(null);
 
   const fetchData = async () => {
-    const { data } = await axios.get("https://www.ttobagi.site/api/animal/");
+    const { data } = await axios
+      .get("https://www.ttobagi.site/api/animal/")
+      .catch(function (error) {
+        // if (error.response) {
+        //   console.log(error.response.data);
+        //   console.log(error.response.status);
+        //   console.log(error.response.headers);
+        // } else if (error.request) {
+        //   console.log(error.request);
+        // } else {
+        //   console.log("Error", error.message);
+        // }
+      });
     setAnimals(data);
   };
   useEffect(() => {

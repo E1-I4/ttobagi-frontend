@@ -1,12 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 
 const Discover = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { id } = location.state;
+
+  const [animals, setAnimals] = useState({});
+  const URL = "https://www.ttobagi.site/api/animal/" + id;
+  const fetchData = async () => {
+    const { data } = await axios.get(URL).catch(function (error) {
+      // error 확인 함수
+      // if (error.response) {
+      //   console.log(error.response.data);
+      //   console.log(error.response.status);
+      //   console.log(error.response.headers);
+      // } else if (error.request) {
+      //   console.log(error.request);
+      // } else {
+      //   console.log("Error", error.message);
+      // }
+    });
+    setAnimals(data);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const navigateToRecyclePage = () => {
-    navigate("/recycle");
+    navigate("/recycle", {
+      state: {
+        id,
+        name: animals.name,
+        sick: animals.sick,
+        trash_name: animals.trash_name,
+        image: animals.image,
+        trash: animals.trash,
+        target: animals.target,
+        sill: animals.sill,
+        trash_description: animals.trash_description,
+        description: animals.description,
+      },
+    });
   };
 
   return (
@@ -14,13 +52,15 @@ const Discover = () => {
       <AppLayout>
         <Title>
           <h2>
-            페트병 때문에 아파하는
+            {animals.trash_name} 때문에 아파하는
             <br></br>
-            붉은박쥐를 발견했어요
+            {animals.name}를 발견했어요
           </h2>
         </Title>
-        <ChaImg></ChaImg>
-        <Button onClick={navigateToRecyclePage}>페트병 치워주기</Button>
+        <ChaImg src={animals.sick} alt={animals.name}></ChaImg>
+        <Button onClick={navigateToRecyclePage} id={id}>
+          {animals.trash_name} 치워주기
+        </Button>
       </AppLayout>
     </div>
   );
