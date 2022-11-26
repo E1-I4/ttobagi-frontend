@@ -2,19 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import "../styles/theme.css";
-import { useNavigate } from "react-router-dom";
 import { ReactComponent as MainLogo } from "../assets/svg/logo_main.svg";
-import { REST_API_KEY, REDIRECT_URI } from "./.env";
+import { REST_API_KEY } from "../.env";
+import { REDIRECT_URI } from "../utils/Urls";
 
 const Login = () => {
-    const navigate = useNavigate();
-
     const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=account_email`;
 
     const handleLogin = () => {
-        if (window.location == 'http://localhost:3000/login') {
-            window.location.href = KAKAO_AUTH_URL;
-        }
+        window.location.href = KAKAO_AUTH_URL;
     };
 
     return (
