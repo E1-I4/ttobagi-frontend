@@ -8,7 +8,7 @@ const AlbumItem = ({ animal }) => {
   const { id, name, image, description } = animal || {};
 
   const onClick = () => {
-    navigate("/info/", {
+    navigate("/info", {
       state: {
         id,
         name,

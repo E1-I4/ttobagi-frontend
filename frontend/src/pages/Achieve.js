@@ -3,8 +3,12 @@ import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router-dom";
 
 const Achieve = () => {
+  const location = useLocation();
+  const { id, name, image, description } = location.state;
+
   return (
     <div className="Achieve">
       <AppLayout>
@@ -13,12 +17,17 @@ const Achieve = () => {
             <FontAwesomeIcon icon={faHouse} />
           </HomeIcon>
           <Title>
-            <h2 style={{ margin: 0 }}>붉은박쥐를 수집했어요!</h2>
+            <h2 style={{ margin: 0 }}>{name}를 수집했어요!</h2>
           </Title>
         </Content>
 
-        <ChaImg src="#"></ChaImg>
-        <InfoBox>캐릭터 설명</InfoBox>
+        <ChaImg src={image} alt={name}></ChaImg>
+        <h2 style={{ marginTop: 20, marginBottom: 20 }}>{name}</h2>
+        <InfoBox>
+          {description.split("\\").map((item) => (
+            <Li>{item}</Li>
+          ))}
+        </InfoBox>
       </AppLayout>
     </div>
   );
@@ -60,4 +69,8 @@ let InfoBox = styled.div`
   padding: 10px;
   width: 80vw;
   height: 20vh;
+`;
+
+let Li = styled.ol`
+  margin-left: -25px;
 `;
