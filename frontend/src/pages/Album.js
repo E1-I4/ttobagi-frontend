@@ -5,15 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import AlbumItem from "./AlbumItem";
+import { BACKEND_URL } from "../utils/Urls";
+import { checkAccessToken } from "../utils/Token";
 
 const Album = () => {
   const [animals, setAnimals] = useState(null);
 
+  const user_id = sessionStorage.getItem("user_id");
+
   const fetchData = async () => {
-    const { data } = await axios.get("https://www.ttobagi.site/api/animal/");
+    const { data } = await axios.get(`${BACKEND_URL}/api/animal/`);
     setAnimals(data);
   };
   useEffect(() => {
+    checkAccessToken();
     fetchData();
   }, []);
 
