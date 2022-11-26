@@ -6,7 +6,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import AlbumItem from "./AlbumItem";
 import { BACKEND_URL } from "../utils/Urls";
-import { checkAccessToken } from "../utils/Token";
+import { setAuthorization } from "../utils/Token";
 
 const Album = () => {
   const [animals, setAnimals] = useState(null);
@@ -14,24 +14,13 @@ const Album = () => {
   const user_id = sessionStorage.getItem("user_id");
 
   const fetchData = async () => {
-
-    const { data } = await axios.get(`${BACKEND_URL}/api/animal/`)
-      .catch(function (error) {
-        // if (error.response) {
-        //   console.log(error.response.data);
-        //   console.log(error.response.status);
-        //   console.log(error.response.headers);
-        // } else if (error.request) {
-        //   console.log(error.request);
-        // } else {
-        //   console.log("Error", error.message);
-        // }
-      });
-
+    if (axios.defaults.headers.common["Authorization"] === undefined) {
+      setAuthorization(sessionStorage.getItem("access_token"));
+    }
+    const { data } = await axios.get(`${BACKEND_URL}/api/animal/`);
     setAnimals(data);
   };
   useEffect(() => {
-    checkAccessToken();
     fetchData();
   }, []);
 
