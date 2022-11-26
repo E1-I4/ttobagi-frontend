@@ -1,8 +1,8 @@
-import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../utils/Urls";
 import { checkAccessToken } from "../utils/Token";
 import { useEffect } from "react";
+import { setAuthorization } from "../utils/Token";
 
 const JWT_EXPIRE_TIME = 2 * 3600 * 1000; // expiration time(2 hours in milliseconds)
 
@@ -20,9 +20,8 @@ const KakaoLogin = () => {
                 sessionStorage.setItem("access_token", res.access_token);
                 sessionStorage.setItem("refresh_token", res.refresh_token);
                 sessionStorage.setItem("user_id", res.user.pk);
-                axios.defaults.headers.common["Authorization"] =
-                    `"Bearer ${res.access_token}`;
-                setTimeout(checkAccessToken, JWT_EXPIRE_TIME - 60000); // 1 minute before expiration
+                setAuthorization(res.access_token);
+                setTimeout(checkAccessToken, JWT_EXPIRE_TIME - 60000, res.refresh_token); // 1 minute before expiration
                 navigate("/");
             });
     }, []);
