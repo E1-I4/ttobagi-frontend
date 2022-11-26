@@ -11,7 +11,7 @@ import Achieve from "./pages/Achieve";
 import Map from "./pages/Map";
 import Login from "./pages/Login";
 import KakaoLogin from "./pages/KakaoLogin";
-import AuthLayout from "./pages/AuthLayout"
+import AuthLayout from "./components/AuthLayout"
 
 function App() {
   return (
