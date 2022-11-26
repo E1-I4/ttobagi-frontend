@@ -62,7 +62,6 @@ const Recycle = () => {
           {" "}
         </StyledPetBin>
         <PetImg src={trash} alt={name} draggable></PetImg>
-        {/* Giude 자체가 데이터로 저장되어 넘어왔으면 좋을 것 같네용 백엔드 !  */}
         <Guide>{trash_description}투명한 페트병을 버려볼까요?</Guide>
       </AppLayout>
     </div>
