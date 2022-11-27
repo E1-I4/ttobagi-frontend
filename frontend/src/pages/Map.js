@@ -3,8 +3,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import arrowLeft from "../assets/img/arrowLeft.png";
 
 const { kakao } = window;
 
@@ -239,7 +238,7 @@ const Map = ({ animals }) => {
         <Background>
           <Content>
             <a href="/" style={{ marginTop: 50, marginBottom: 10 }}>
-              <StyledFontAwesomeIcon icon={faChevronLeft} />
+              <img src={arrowLeft} />
             </a>
             <h2
               style={{
@@ -283,10 +282,6 @@ let Content = styled.div`
   justify-contents: left;
   width: 100%;
   margin: 0 20px;
-`;
-
-let StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  color: var(--gray);
 `;
 
 let MapContainer = styled.div`

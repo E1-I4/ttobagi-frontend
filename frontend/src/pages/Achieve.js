@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import achBg from "../assets/img/achbg.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import homeIcon from "../assets/img/homeIcon.png";
 import { useLocation } from "react-router-dom";
 
 const Achieve = () => {
@@ -16,7 +15,7 @@ const Achieve = () => {
         <Background>
           <Content>
             <HomeIcon href="/" style={{ marginTop: 40, marginBottom: 10 }}>
-              <FontAwesomeIcon icon={faHouse} />
+              <img src={homeIcon} />
             </HomeIcon>
             <Title>
               <span style={{ margin: 0, fontSize: 26, fontWeight: 800 }}>

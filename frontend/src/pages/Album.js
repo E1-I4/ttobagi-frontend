@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import arrowLeft from "../assets/img/arrowLeft.png";
+
 import axios from "axios";
 import AlbumItem from "./AlbumItem";
 import { BACKEND_URL } from "../utils/Urls";
@@ -30,7 +30,7 @@ const Album = () => {
         <Background>
           <Content>
             <a href="/" style={{ marginTop: 40, marginBottom: 10 }}>
-              <FontAwesomeIcon icon={faChevronLeft} />
+              <img src={arrowLeft} />
             </a>
             <h2 style={{ marginBottom: 30 }}>
               지금까지 수집한

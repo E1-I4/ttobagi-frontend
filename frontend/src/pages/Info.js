@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import arrowLeft from "../assets/img/arrowLeft.png";
 import { useLocation } from "react-router-dom";
 
 const Info = () => {
@@ -16,7 +15,7 @@ const Info = () => {
         <Background>
           <Content>
             <a href="/album" style={{ marginTop: 40, marginBottom: 20 }}>
-              <FontAwesomeIcon icon={faChevronLeft} />
+              <img src={arrowLeft} />
             </a>
           </Content>
           <CenterBox>
