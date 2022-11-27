@@ -49,22 +49,24 @@ const Recycle = () => {
   return (
     <div className="Recycle">
       <AppLayout>
-        <FakeTarget
-          // src={target}
-          // alt={name}
-          id="petbtn"
-          onDragOver={(event) => {
-            return dragFunction(event, "over");
-          }}
-          onDrop={(event) => dragFunction(event, "drop")}
-          onDragEnter={(event) => dragFunction(event, "enter")}
-          onDragLeave={(event) => dragFunction(event, "leave")}
-          className="dragAndDrop"
-        >
-          <Target src={target} alt={name}></Target>
-        </FakeTarget>
-        <Trash src={trash} alt={name} draggable></Trash>
-        <Guide>{trash_description}</Guide>
+        <Background>
+          <FakeTarget
+            // src={target}
+            // alt={name}
+            id="petbtn"
+            onDragOver={(event) => {
+              return dragFunction(event, "over");
+            }}
+            onDrop={(event) => dragFunction(event, "drop")}
+            onDragEnter={(event) => dragFunction(event, "enter")}
+            onDragLeave={(event) => dragFunction(event, "leave")}
+            className="dragAndDrop"
+          >
+            <Target src={target} alt={name}></Target>
+          </FakeTarget>
+          <Trash src={trash} alt={name} draggable></Trash>
+          <Guide>{trash_description}</Guide>
+        </Background>
       </AppLayout>
     </div>
   );
@@ -79,24 +81,33 @@ export default Recycle;
 // StyledPetBin -> FakeTarget
 // PetImg -> Trash
 
+let Background = styled.div`
+  width: 350px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  font-weight: 800;
+`;
+
 let FakeTarget = styled.div`
-  margin: 80px 0 10px 0;
-  width: 80vw;
+  margin-top: 150px;
+  width: 250px;
   height: 40vh;
 `;
 
 let Target = styled.img`
-  // margin: 50px 0 10px 0;
   width: 100%;
 `;
 
 let Trash = styled.img`
-  width: 40vw;
-  margin-left: 40vw;
+  width: 160px;
+  margin-left: 150px;
   margin-bottom: 70px;
 `;
 
 let Guide = styled.span`
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
 `;

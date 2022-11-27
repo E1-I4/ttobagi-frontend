@@ -236,21 +236,31 @@ const Map = ({ animals }) => {
   return (
     <div className="Map">
       <AppLayout>
-        <Content>
-          <a href="/" style={{ marginTop: 40, marginBottom: 10 }}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </a>
-          <h2 style={{ marginBottom: 30 }}>
-            제주도에서
+        <Background>
+          <Content>
+            <a href="/" style={{ marginTop: 50, marginBottom: 10 }}>
+              <StyledFontAwesomeIcon icon={faChevronLeft} />
+            </a>
+            <h2
+              style={{
+                fontWeight: 800,
+                fontSize: 26,
+                color: "var(--darkgray)",
+              }}
+            >
+              제주도에서
+              <br></br>
+              멸종위기동물을 찾아봐요
+            </h2>
+            <span style={{ fontSize: 14 }}>
+              내 위치가 표시될 때까지 잠시만 기다려주세요
+            </span>
             <br></br>
-            멸종위기동물을 찾아봐요
-          </h2>
-          <span>내 위치가 표시될 때까지 잠시만 기다려주세요</span>
-          <br></br>
-        </Content>
-        <MapContainer id="map"></MapContainer>
-        {/* <div id="location">여러분의 위치가 여기에 나타날 것입니다.</div>
+          </Content>
+          <MapContainer id="map"></MapContainer>
+          {/* <div id="location">여러분의 위치가 여기에 나타날 것입니다.</div>
         <div id="distance">서울시청과의 거리가 여기에 나타날 것입니다.</div> */}
+        </Background>
       </AppLayout>
     </div>
   );
@@ -258,17 +268,32 @@ const Map = ({ animals }) => {
 
 export default Map;
 
+let Background = styled.div`
+  width: 350px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  background: white;
+`;
+
 let Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-contents: left;
-  width: 85vw;
+  width: 100%;
+  margin: 0 20px;
+`;
+
+let StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  color: var(--gray);
 `;
 
 let MapContainer = styled.div`
   border-radius: 20px;
-  width: 85vw;
-  height: 50vh;
+  width: 310px;
+  height: 380px;
+  margin: 0 20px;
 `;
 
 // 고정 핀 찍기

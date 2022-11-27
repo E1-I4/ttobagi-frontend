@@ -50,17 +50,19 @@ const Discover = () => {
   return (
     <div className="Discover">
       <AppLayout>
-        <Title>
-          <h2>
-            {animals.trash_name} 때문에 아파하는
-            <br></br>
-            {animals.name}를 발견했어요
-          </h2>
-        </Title>
-        <ChaImg src={animals.sick} alt={animals.name}></ChaImg>
-        <Button onClick={navigateToRecyclePage} id={id}>
-          {animals.trash_name} 치워주기
-        </Button>
+        <Background>
+          <Title>
+            <span>
+              {animals.trash_name} 때문에 아파하는
+              <br></br>
+              {animals.name}을(를) 발견했어요
+            </span>
+          </Title>
+          <ChaImg src={animals.sick} alt={animals.name}></ChaImg>
+          <Button onClick={navigateToRecyclePage} id={id}>
+            {animals.trash_name} 치워주기
+          </Button>
+        </Background>
       </AppLayout>
     </div>
   );
@@ -68,34 +70,45 @@ const Discover = () => {
 
 export default Discover;
 
-let Title = styled.div`
+let Background = styled.div`
+  width: 350px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 85vw;
+  background: white;
+  font-weight: 800;
+`;
+
+let Title = styled.div`
+  font-size: 26px;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
   text-align: left;
   margin: 50px 0 30px 0;
+  margin: 80px 20px 40px 20px;
 `;
 
 let ChaImg = styled.img`
   border-radius: 20px;
-  width: 85vw;
-  height: 55vh;
+  height: 300px;
   margin-bottom: 20px;
+  margin: 0 20px 120px 20px;
 `;
 
 let Button = styled.button`
-  font-size: 20px;
-  background: #eFF9900;
+  font-size: 22px;
+  font-weight: 800;
+  background: var(--orange);
   border: none;
-  border-radius: 20px;
+  border-radius: 24px;
   margin-top: 10px;
   padding: 10px;
   &:hover {
     cursor: pointer;
   }
-  width: 85vw;
-  height: 60px;
+  height: 70px;
   font-size: 20px;
-  font-weight: 700;
   color: var(--darkgray);
+  margin: 0 20px;
 `;

@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import "../styles/theme.css";
+// import splashImg from "../assets/img/splash.png";
+import bgImg from "../assets/img/mainbg.png";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as MainLogo } from "../assets/svg/logo_main.svg";
 
@@ -14,28 +16,57 @@ const Home = () => {
     navigate("/map");
   };
 
+  // setTimeout(function () {
+  //   document.getElementById("splash").style.display = "none";
+  // }, 2000);
+
   return (
     <div className="Home">
-      <Background>
-        <AppLayout>
-          <Title style={{ marginTop: 100 }}>
+      <AppLayout>
+        {/* <Splash id="splash"></Splash> */}
+        <Background>
+          <Title style={{ marginTop: 175 }}>
             <MainLogo />
-            <span>제주도의 멸종위기동물을 위한 도감</span>
+            <SubTitle>
+              <span>
+                제주도의
+                <span style={{ color: "var(--orange)" }}> 멸종위기 동물</span>을
+                위한 도감
+              </span>
+            </SubTitle>
           </Title>
           <>
-            <Button onClick={navigateToMapPage}>서식지도</Button>
+            <Button onClick={navigateToMapPage} style={{ marginTop: 15 }}>
+              서식지도
+            </Button>
             <Button onClick={navigateToAlbumPage}>도감</Button>
           </>
-        </AppLayout>
-      </Background>
+        </Background>
+      </AppLayout>
     </div>
   );
 };
 
 export default Home;
 
+// let Splash = styled.div`
+//   width: 350px;
+//   height: 100vh;
+//   background-image: url(${splashImg});
+//   background-size: cover;
+//   background-repeat: none;
+//   position: absolute;
+// `;
+
 let Background = styled.div`
-  background: #f0f0f0;
+  width: 350px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(${bgImg});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 let Title = styled.div`
@@ -46,20 +77,24 @@ let Title = styled.div`
   gap: 20px;
 `;
 
+let SubTitle = styled.div`
+  font-size: 19px;
+  font-weight: 800;
+`;
+
 let Button = styled.button`
   font-size: 20px;
-  background: #e1e1e1;
-  color: var(--darkgray);
+  font-weight: 800;
+  border-radius: 24px;
+  width: 300px;
+  height: 70px;
   border: none;
   border-radius: 20px;
-  margin-top: 10px;
-  padding: 10px;
+  margin-bottom: 15px;
+  background: white;
+  color: var(--darkgray);
   &:hover {
     cursor: pointer;
-    background: #eFF9900;
+    background: var(--orange);
   }
-  width: 70vw;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 700;
 `;

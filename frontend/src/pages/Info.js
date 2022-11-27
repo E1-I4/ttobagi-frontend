@@ -13,18 +13,22 @@ const Info = () => {
   return (
     <div className="Info">
       <AppLayout>
-        <Content>
-          <a href="/album" style={{ marginTop: 40, marginBottom: 20 }}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </a>
-        </Content>
-        <ChaImg src={image} alt={name}></ChaImg>
-        <h2 style={{ marginTop: 20, marginBottom: 20 }}>{name}</h2>
-        <InfoBox>
-          {description.split("\\").map((item) => (
-            <Li>{item}</Li>
-          ))}
-        </InfoBox>
+        <Background>
+          <Content>
+            <a href="/album" style={{ marginTop: 40, marginBottom: 20 }}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </a>
+          </Content>
+          <CenterBox>
+            <ChaImg src={image} alt={name}></ChaImg>
+            <h2>{name}</h2>
+            <InfoBox>
+              {description.split("\\").map((item) => (
+                <Li>{item}</Li>
+              ))}
+            </InfoBox>
+          </CenterBox>
+        </Background>
       </AppLayout>
     </div>
   );
@@ -32,28 +36,44 @@ const Info = () => {
 
 export default Info;
 
+let Background = styled.div`
+  width: 350px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  font-weight: 800;
+`;
+
 let Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-contents: left;
-  width: 85vw;
+  margin: 0 20px;
+`;
+
+let CenterBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 let ChaImg = styled.img`
   border-radius: 25px;
-  width: 80vw;
-  height: 50vh;
+  width: 200px;
+  height: 250px;
+  margin: 0 20px;
 `;
 
 let InfoBox = styled.div`
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 800;
   background: transparent;
-  background: lightgray;
+  background: var(--melange);
   border-radius: 25px;
-  margin-top: 10px;
   padding: 10px;
-  width: 80vw;
-  height: 25vh;
+  height: 250px;
+  margin: 0 20px;
 `;
 
 let Li = styled.ol`

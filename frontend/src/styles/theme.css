@@ -2,14 +2,14 @@
   font-family: "Pretendard-Regular";
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
     format("woff");
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
 }
 
 :root {
-  --green: #95e3a5;
-  --blue: #81cbeb;
   --darkgray: #434343;
   --gray: #757575;
   --lightgray: #9e9e9e;
+  --melange: #f3f3f3;
+  --orange: #ff9900;
 }
