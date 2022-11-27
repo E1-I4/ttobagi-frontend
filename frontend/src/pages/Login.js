@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import "../styles/theme.css";
-
-// import kLoginBtn from "../assets/img/klogin.png";
+import kLogin from "../assets/img/klogin.png";
 import { ReactComponent as MainLogo } from "../assets/svg/logo_main.svg";
 import { REST_API_KEY } from "../.env";
 import { REDIRECT_URI } from "../utils/Urls";
@@ -29,10 +28,9 @@ const Login = () => {
               </span>
             </SubTitle>
           </Title>
-          <>
-            {/* <kLoginBtn /> */}
-            <Button onClick={handleLogin}>카카오 로그인</Button>
-          </>
+          <KakaoLoginBtn>
+            <img src={kLogin} onClick={handleLogin} />
+          </KakaoLoginBtn>
         </Background>
       </AppLayout>
     </div>
@@ -63,18 +61,8 @@ let SubTitle = styled.div`
   font-weight: 800;
 `;
 
-let Button = styled.button`
-  font-size: 16px;
-  background: #fee500;
-  color: var(--darkgray);
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
+let KakaoLoginBtn = styled.div`
   &:hover {
     cursor: pointer;
-    background: #eFF9900;
   }
-  width: 300px;
-  height: 50px;
-  font-weight: 700;
 `;

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import "../styles/theme.css";
-// import splashImg from "../assets/img/splash.png";
 import bgImg from "../assets/img/mainbg.png";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as MainLogo } from "../assets/svg/logo_main.svg";
@@ -16,14 +15,9 @@ const Home = () => {
     navigate("/map");
   };
 
-  // setTimeout(function () {
-  //   document.getElementById("splash").style.display = "none";
-  // }, 2000);
-
   return (
     <div className="Home">
       <AppLayout>
-        {/* <Splash id="splash"></Splash> */}
         <Background>
           <Title style={{ marginTop: 175 }}>
             <MainLogo />
@@ -49,15 +43,6 @@ const Home = () => {
 
 export default Home;
 
-// let Splash = styled.div`
-//   width: 350px;
-//   height: 100vh;
-//   background-image: url(${splashImg});
-//   background-size: cover;
-//   background-repeat: none;
-//   position: absolute;
-// `;
-
 let Background = styled.div`
   width: 350px;
   height: 100vh;
@@ -79,12 +64,10 @@ let Title = styled.div`
 
 let SubTitle = styled.div`
   font-size: 19px;
-  font-weight: 800;
 `;
 
 let Button = styled.button`
   font-size: 20px;
-  font-weight: 800;
   border-radius: 24px;
   width: 300px;
   height: 70px;

@@ -35,7 +35,7 @@ const Album = () => {
             <h2 style={{ marginBottom: 30 }}>
               지금까지 수집한
               <br></br>
-              동물들이예요
+              동물들이에요
             </h2>
           </Content>
           <ImgListBlock>

@@ -104,7 +104,7 @@ const Map = ({ animals }) => {
         id: 4,
         title: "제주특별자치도 서귀포시 성산읍 성산리 78",
         content: "<div>나팔고둥</div>",
-        latlng: new kakao.maps.LatLng(33.545547, 126.94076),
+        latlng: new kakao.maps.LatLng(33.4587135, 126.9390786),
       },
       {
         id: 5,
@@ -112,12 +112,12 @@ const Map = ({ animals }) => {
         content: "<div>갯게</div>",
         latlng: new kakao.maps.LatLng(33.218044, 126.264616),
       },
-      {
-        id: 6,
-        title: "제주특별자치도 서귀포시 성산읍 성산리 78",
-        content: "<div>팔색조</div>",
-        latlng: new kakao.maps.LatLng(33.452352, 126.917965),
-      },
+      // {
+      //   id: 6,
+      //   title: "제주특별자치도 서귀포시 성산읍 성산리 78",
+      //   content: "<div>팔색조</div>",
+      //   latlng: new kakao.maps.LatLng(33.452352, 126.917965),
+      // },
       // 가짜 데이터
       // {
       //   title: "제주특별자치도 제주시 용담이동 2002",
