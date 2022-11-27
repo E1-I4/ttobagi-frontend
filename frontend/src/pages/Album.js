@@ -17,7 +17,7 @@ const Album = () => {
     if (axios.defaults.headers.common["Authorization"] === undefined) {
       setAuthorization(sessionStorage.getItem("access_token"));
     }
-    const { data } = await axios.get(`${BACKEND_URL}/api/animal/`);
+    const { data } = await axios.get(`${BACKEND_URL}/api/animals/`);
     setAnimals(data);
   };
   useEffect(() => {

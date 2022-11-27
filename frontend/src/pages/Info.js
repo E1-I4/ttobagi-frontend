@@ -23,7 +23,7 @@ const Info = () => {
             <h2>{name}</h2>
             <InfoBox>
               {description.split("\\").map((item) => (
-                <Li>{item}</Li>
+                <Li>• {item}</Li>
               ))}
             </InfoBox>
           </CenterBox>
@@ -67,12 +67,13 @@ let ChaImg = styled.img`
 let InfoBox = styled.div`
   font-size: 18px;
   font-weight: 800;
+  color: var(--darkgray);
   background: transparent;
   background: var(--melange);
   border-radius: 25px;
   padding: 10px;
-  height: 250px;
-  margin: 0 20px;
+  margin: 20px;
+  line-height: 27px;
 `;
 
 let Li = styled.ol`

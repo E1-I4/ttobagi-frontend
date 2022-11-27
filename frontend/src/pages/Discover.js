@@ -10,7 +10,7 @@ const Discover = () => {
   const { id } = location.state;
 
   const [animals, setAnimals] = useState({});
-  const URL = "https://www.ttobagi.site/api/animal/" + id;
+  const URL = "https://www.ttobagi.site/api/animals/" + id;
   const fetchData = async () => {
     const { data } = await axios.get(URL).catch(function (error) {
       // error 확인 함수

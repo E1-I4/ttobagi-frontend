@@ -100,6 +100,7 @@ let InfoBox = styled.div`
   border-radius: 25px;
   padding: 10px;
   margin: 20px;
+  line-height: 27px;
 `;
 
 let Li = styled.ol`
