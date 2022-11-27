@@ -99,8 +99,7 @@ let InfoBox = styled.div`
   background: white;
   border-radius: 25px;
   padding: 10px;
-  height: 200px;
-  margin: 20px 20px 0 20px;
+  margin: 20px;
 `;
 
 let Li = styled.ol`
