@@ -36,7 +36,7 @@ const Achieve = () => {
             <h2 style={{ marginTop: 20, marginBottom: 20 }}>{name}</h2>
             <InfoBox>
               {description.split("\\").map((item) => (
-                <Li>{item}</Li>
+                <Li>• {item}</Li>
               ))}
             </InfoBox>
           </CenterBox>
