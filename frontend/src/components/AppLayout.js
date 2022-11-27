@@ -9,12 +9,10 @@ const AppLayout = ({ children }) => {
 export default AppLayout;
 
 let Box = styled.div`
-  font-family: "Pretendard-Regular";
   maxwidth: 400px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  color: var(--darkgray);
 `;

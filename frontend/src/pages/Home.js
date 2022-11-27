@@ -22,7 +22,7 @@ const Home = () => {
           <Title style={{ marginTop: 175 }}>
             <MainLogo />
             <SubTitle>
-              <span>
+              <span style={{ color: "var(--gray)" }}>
                 제주도의
                 <span style={{ color: "var(--orange)" }}> 멸종위기 동물</span>을
                 위한 도감
@@ -50,7 +50,6 @@ let Background = styled.div`
   flex-direction: column;
   align-items: center;
   background-image: url(${bgImg});
-  background-repeat: no-repeat;
   background-size: cover;
 `;
 
@@ -60,6 +59,7 @@ let Title = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-weight: 800;
 `;
 
 let SubTitle = styled.div`
@@ -68,6 +68,7 @@ let SubTitle = styled.div`
 
 let Button = styled.button`
   font-size: 20px;
+  font-weight: 800;
   border-radius: 24px;
   width: 300px;
   height: 70px;

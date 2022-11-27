@@ -21,7 +21,7 @@ const Login = () => {
           <Title style={{ marginTop: 240 }}>
             <MainLogo />
             <SubTitle>
-              <span>
+              <span style={{ color: "var(--gray)" }}>
                 제주도의
                 <span style={{ color: "var(--orange)" }}> 멸종위기 동물</span>을
                 위한 도감

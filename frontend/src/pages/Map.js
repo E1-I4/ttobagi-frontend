@@ -250,9 +250,9 @@ const Map = ({ animals }) => {
             >
               제주도에서
               <br></br>
-              멸종위기동물을 찾아봐요
+              멸종위기 동물을 찾아봐요
             </h2>
-            <span style={{ fontSize: 14 }}>
+            <span style={{ fontSize: 12, color: "var(--lightgray)" }}>
               내 위치가 표시될 때까지 잠시만 기다려주세요
             </span>
             <br></br>
