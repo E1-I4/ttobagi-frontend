@@ -18,7 +18,15 @@ const Home = () => {
   return (
     <div className="Home">
       <AppLayout>
-        <Background>
+        <Background
+          style={
+            {
+              // border: "20px solid var(--melange)",
+              // borderRadius: "40px",
+              // margin: "5vw 10vh",
+            }
+          }
+        >
           <Title style={{ marginTop: 175 }}>
             <MainLogo />
             <SubTitle>
@@ -46,6 +54,7 @@ export default Home;
 let Background = styled.div`
   width: 350px;
   height: 100vh;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   align-items: center;
