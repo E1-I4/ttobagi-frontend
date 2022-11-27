@@ -18,7 +18,14 @@ const Achieve = () => {
               <img src={homeIcon} />
             </HomeIcon>
             <Title>
-              <span style={{ margin: 0, fontSize: 26, fontWeight: 800 }}>
+              <span
+                style={{
+                  margin: 0,
+                  fontSize: 24,
+                  fontWeight: 800,
+                  color: "var(--darkgray)",
+                }}
+              >
                 <span style={{ color: "var(--orange)" }}>{name}</span>
                 <span>을(를) 수집했어요!</span>
               </span>
@@ -87,6 +94,7 @@ let ChaImg = styled.img`
 let InfoBox = styled.div`
   font-size: 18px;
   font-weight: 800;
+  color: var(--darkgray);
   background: transparent;
   background: white;
   border-radius: 25px;
