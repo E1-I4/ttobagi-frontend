@@ -21,7 +21,5 @@ export const refreshAccessToken = async (refresh_token) => {
 };
 
 export const checkAccessToken = async (refresh_token) => {
-    if (axios.defaults.headers.common["Authorization"] === undefined) {
-        await refreshAccessToken(refresh_token);
-    }
+    await refreshAccessToken(refresh_token);
 }
