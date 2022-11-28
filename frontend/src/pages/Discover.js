@@ -92,6 +92,8 @@ let Title = styled.div`
   text-align: left;
   margin: 50px 0 30px 0;
   margin: 80px 20px 40px 20px;
+  line-height: 140%;
+  color: var(--darkgray);
 `;
 
 let ChaImg = styled.img`

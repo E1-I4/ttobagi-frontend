@@ -110,6 +110,8 @@ let Trash = styled.img`
 `;
 
 let Guide = styled.span`
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gray);
+  letter-spacing: -0.03em;
 `;
