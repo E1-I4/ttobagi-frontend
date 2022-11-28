@@ -3,6 +3,7 @@ import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import { BACKEND_URL } from "../utils/Urls";
 
 const Discover = () => {
   const navigate = useNavigate();
@@ -10,20 +11,22 @@ const Discover = () => {
   const { id } = location.state;
 
   const [animals, setAnimals] = useState({});
-  const URL = "https://www.ttobagi.site/api/animal/" + id;
+
   const fetchData = async () => {
-    const { data } = await axios.get(URL).catch(function (error) {
-      // error 확인 함수
-      // if (error.response) {
-      //   console.log(error.response.data);
-      //   console.log(error.response.status);
-      //   console.log(error.response.headers);
-      // } else if (error.request) {
-      //   console.log(error.request);
-      // } else {
-      //   console.log("Error", error.message);
-      // }
-    });
+    const { data } = await axios
+      .get(`${BACKEND_URL}/api/animals/${id}`)
+      .catch(function (error) {
+        // error 확인 함수
+        // if (error.response) {
+        //   console.log(error.response.data);
+        //   console.log(error.response.status);
+        //   console.log(error.response.headers);
+        // } else if (error.request) {
+        //   console.log(error.request);
+        // } else {
+        //   console.log("Error", error.message);
+        // }
+      });
     setAnimals(data);
   };
   useEffect(() => {
@@ -40,7 +43,8 @@ const Discover = () => {
         image: animals.image,
         trash: animals.trash,
         target: animals.target,
-        sill: animals.sill,
+        sil: animals.sil,
+        animal_name_color: animals.animal_name_color,
         trash_description: animals.trash_description,
         description: animals.description,
       },
@@ -55,7 +59,9 @@ const Discover = () => {
             <span>
               {animals.trash_name} 때문에 아파하는
               <br></br>
-              {animals.name}을(를) 발견했어요
+              {animals.name}
+              {id === 3 || id === 4 ? <span>을</span> : <span>를</span>}{" "}
+              발견했어요
             </span>
           </Title>
           <ChaImg src={animals.sick} alt={animals.name}></ChaImg>

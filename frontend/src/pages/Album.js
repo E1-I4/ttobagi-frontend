@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import arrowLeft from "../assets/img/arrowLeft.png";
+
 import axios from "axios";
 import AlbumItem from "./AlbumItem";
 import { BACKEND_URL } from "../utils/Urls";
 import { setAuthorization } from "../utils/Token";
 
 const Album = () => {
-  const [animals, setAnimals] = useState(null);
+  const [animals, setAnimals] = useState([]);
+  const [userAnimals, setUserAnimals] = useState([]);
 
   const user_id = sessionStorage.getItem("user_id");
 
@@ -17,8 +18,13 @@ const Album = () => {
     if (axios.defaults.headers.common["Authorization"] === undefined) {
       setAuthorization(sessionStorage.getItem("access_token"));
     }
-    const { data } = await axios.get(`${BACKEND_URL}/api/animal/`);
+    const { data } = await axios.get(`${BACKEND_URL}/api/animals/`);
     setAnimals(data);
+
+    const { data: userData } = await axios.get(
+      `${BACKEND_URL}/api/user/${user_id}/animals/`
+    );
+    setUserAnimals(userData);
   };
   useEffect(() => {
     fetchData();
@@ -30,18 +36,22 @@ const Album = () => {
         <Background>
           <Content>
             <a href="/" style={{ marginTop: 40, marginBottom: 10 }}>
-              <FontAwesomeIcon icon={faChevronLeft} />
+              <img src={arrowLeft} />
             </a>
             <h2 style={{ marginBottom: 30 }}>
               지금까지 수집한
               <br></br>
-              동물들이예요
+              동물들이에요
             </h2>
           </Content>
           <ImgListBlock>
             {animals?.length &&
               animals.map((animal) => (
-                <AlbumItem key={animal.name} animal={animal} />
+                <AlbumItem
+                  key={animal.name}
+                  animal={animal}
+                  userAnimals={userAnimals}
+                />
               ))}
           </ImgListBlock>
         </Background>
@@ -54,7 +64,7 @@ export default Album;
 
 let Background = styled.div`
   width: 350px;
-  height: 100vh;
+  height: 800px;
   display: flex;
   flex-direction: column;
   background: white;

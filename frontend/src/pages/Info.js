@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import arrowLeft from "../assets/img/arrowLeft.png";
 import { useLocation } from "react-router-dom";
 
 const Info = () => {
   const location = useLocation();
 
-  const { name, image, description } = location.state;
+  const { name, image, animal_name, description } = location.state;
 
   return (
     <div className="Info">
@@ -16,15 +15,17 @@ const Info = () => {
         <Background>
           <Content>
             <a href="/album" style={{ marginTop: 40, marginBottom: 20 }}>
-              <FontAwesomeIcon icon={faChevronLeft} />
+              <img src={arrowLeft} />
             </a>
           </Content>
           <CenterBox>
             <ChaImg src={image} alt={name}></ChaImg>
-            <h2>{name}</h2>
+            <h2>
+              <img src={animal_name} />
+            </h2>
             <InfoBox>
               {description.split("\\").map((item) => (
-                <Li>{item}</Li>
+                <Li>• {item}</Li>
               ))}
             </InfoBox>
           </CenterBox>
@@ -68,12 +69,13 @@ let ChaImg = styled.img`
 let InfoBox = styled.div`
   font-size: 18px;
   font-weight: 800;
+  color: var(--darkgray);
   background: transparent;
   background: var(--melange);
   border-radius: 25px;
   padding: 10px;
-  height: 250px;
-  margin: 0 20px;
+  margin: 20px;
+  line-height: 27px;
 `;
 
 let Li = styled.ol`

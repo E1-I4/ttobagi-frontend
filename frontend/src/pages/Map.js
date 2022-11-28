@@ -1,17 +1,42 @@
 /* global kakao */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+
+import arrowLeft from "../assets/img/arrowLeft.png";
+import axios from "axios";
+import { BACKEND_URL } from "../utils/Urls";
 
 const { kakao } = window;
 
-const Map = ({ animals }) => {
+const Map = () => {
   const navigate = useNavigate();
 
+  const [animals, setAnimals] = useState({});
+  const fetchData = async () => {
+    const { data } = await axios
+      .get(`${BACKEND_URL}/api/animal/`)
+      .catch(function (error) {
+        // error 확인 함수
+        // if (error.response) {
+        //   console.log(error.response.data);
+        //   console.log(error.response.status);
+        //   console.log(error.response.headers);
+        // } else if (error.request) {
+        //   console.log(error.request);
+        // } else {
+        //   console.log("Error", error.message);
+        // }
+      });
+    setAnimals(data);
+  };
+
   useEffect(() => {
+    fetchData();
+
+    console.log(animals);
+
     ////////// 카카오맵 생성 ////////////////
     var mapContainer = document.getElementById("map"), // 지도를 표시할 div
       mapOption = {
@@ -81,43 +106,50 @@ const Map = ({ animals }) => {
 
     // 마커를 표시할 위치와 title 객체 배열입니다
 
+    // console.log(id);
     var positions = [
       {
         id: 1,
         title: "제주특별자치도 제주시 아라일동 산 66-5",
         content: "<div>붉은박쥐</div>",
         latlng: new kakao.maps.LatLng(33.424496, 126.558734),
+        // sill: animals[0].sill,
       },
       {
         id: 2,
         title: "제주특별자치도 제주시 오등동 산 182",
         content: "<div>제주검독수리</div>",
         latlng: new kakao.maps.LatLng(33.376665, 126.542212),
+        // sill: animals[2].sill,
       },
       {
         id: 3,
         title: "제주특별자치도 서귀포시 상효동 산 1-2",
         content: "<div>비바리뱀</div>",
         latlng: new kakao.maps.LatLng(33.34696, 126.545547),
+        // sill: animals[3].sill,
       },
       {
         id: 4,
         title: "제주특별자치도 서귀포시 성산읍 성산리 78",
         content: "<div>나팔고둥</div>",
-        latlng: new kakao.maps.LatLng(33.545547, 126.94076),
+        latlng: new kakao.maps.LatLng(33.4587135, 126.9390786),
       },
       {
         id: 5,
         title: "제주특별자치도 서귀포시 대정읍 상모리 2973-8",
         content: "<div>갯게</div>",
         latlng: new kakao.maps.LatLng(33.218044, 126.264616),
+        // sill: animals[5].sill,
       },
-      {
-        id: 6,
-        title: "제주특별자치도 서귀포시 성산읍 성산리 78",
-        content: "<div>팔색조</div>",
-        latlng: new kakao.maps.LatLng(33.452352, 126.917965),
-      },
+
+      // {
+      //   id: 6,
+      //   title: "제주특별자치도 서귀포시 성산읍 성산리 78",
+      //   content: "<div>팔색조</div>",
+      //   latlng: new kakao.maps.LatLng(33.452352, 126.917965),
+      // },
+
       // 가짜 데이터
       // {
       //   title: "제주특별자치도 제주시 용담이동 2002",
@@ -152,6 +184,9 @@ const Map = ({ animals }) => {
       // 마커 이미지의 이미지 크기 입니다
       var imageSize = new kakao.maps.Size(24, 35);
 
+      // let Id = animals[i].id;
+      // console.log(Id);
+
       // 마커 이미지를 생성합니다
       var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
@@ -159,6 +194,7 @@ const Map = ({ animals }) => {
       // var latlng = new kakao.maps.LatLng(animal.latitude, animal.longtitude);
 
       let markerId = positions[i].id;
+      // let mapSill = positions[i].sill;
       // 마커를 생성합니다
       var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
@@ -166,6 +202,7 @@ const Map = ({ animals }) => {
         title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
         image: markerImage, // 마커 이미지
         id: markerId,
+        // sill: mapSill,
       });
 
       // 마커에 표시할 인포윈도우를 생성합니다
@@ -179,6 +216,11 @@ const Map = ({ animals }) => {
         marker,
         "mouseover",
         makeOverListener(map, marker, infowindow)
+        // function showSill() {
+        // flex -> 이곳에는
+        //   이런 동물이 서식해요
+        // <img src={mapSill} alt={name} />
+        // }
       );
       kakao.maps.event.addListener(
         marker,
@@ -239,7 +281,7 @@ const Map = ({ animals }) => {
         <Background>
           <Content>
             <a href="/" style={{ marginTop: 50, marginBottom: 10 }}>
-              <StyledFontAwesomeIcon icon={faChevronLeft} />
+              <img src={arrowLeft} />
             </a>
             <h2
               style={{
@@ -250,9 +292,9 @@ const Map = ({ animals }) => {
             >
               제주도에서
               <br></br>
-              멸종위기동물을 찾아봐요
+              멸종위기 동물을 찾아봐요
             </h2>
-            <span style={{ fontSize: 14 }}>
+            <span style={{ fontSize: 12, color: "var(--lightgray)" }}>
               내 위치가 표시될 때까지 잠시만 기다려주세요
             </span>
             <br></br>
@@ -283,10 +325,6 @@ let Content = styled.div`
   justify-contents: left;
   width: 100%;
   margin: 0 20px;
-`;
-
-let StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  color: var(--gray);
 `;
 
 let MapContainer = styled.div`

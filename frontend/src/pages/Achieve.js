@@ -1,14 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import achBg from "../assets/img/achbg.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import homeIcon from "../assets/img/homeIcon.png";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
+import { BACKEND_URL } from "../utils/Urls";
+import { setAuthorization } from "../utils/Token";
 
 const Achieve = () => {
   const location = useLocation();
-  const { id, name, image, description } = location.state;
+  const { id, name, image, animal_name_color, description } = location.state;
+  const [animals, setAnimals] = useState({});
+
+  const user_id = sessionStorage.getItem("user_id");
+
+  const fetchData = async () => {
+    if (axios.defaults.headers.common["Authorization"] === undefined) {
+      setAuthorization(sessionStorage.getItem("access_token"));
+    }
+
+    const { data } = await axios
+      .get(`${BACKEND_URL}/api/animals/${id}`)
+      .catch(function (error) {});
+    setAnimals(data);
+  };
+
+  const sendData = async () => {
+    if (axios.defaults.headers.common["Authorization"] === undefined) {
+      setAuthorization(sessionStorage.getItem("access_token"));
+    }
+    try {
+      const res = await axios
+        .post(`${BACKEND_URL}/api/user/${user_id}/animals/add/`, {
+          id: id,
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .finally(function (data) {
+          console.log(data);
+        });
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+    sendData();
+  }, []);
 
   return (
     <div className="Achieve">
@@ -16,21 +60,31 @@ const Achieve = () => {
         <Background>
           <Content>
             <HomeIcon href="/" style={{ marginTop: 40, marginBottom: 10 }}>
-              <FontAwesomeIcon icon={faHouse} />
+              <img src={homeIcon} />
             </HomeIcon>
             <Title>
-              <span style={{ margin: 0, fontSize: 26, fontWeight: 800 }}>
+              <span
+                style={{
+                  margin: 0,
+                  fontSize: 24,
+                  fontWeight: 800,
+                  color: "var(--darkgray)",
+                }}
+              >
                 <span style={{ color: "var(--orange)" }}>{name}</span>
-                <span>을(를) 수집했어요!</span>
+                {id === 3 || id === 4 ? <span>을</span> : <span>를</span>}{" "}
+                수집했어요!
               </span>
             </Title>
           </Content>
           <CenterBox>
             <ChaImg src={image} alt={name}></ChaImg>
-            <h2 style={{ marginTop: 20, marginBottom: 20 }}>{name}</h2>
+            <h2 style={{ marginTop: 20, marginBottom: 20 }}>
+              <img src={animal_name_color} alt={name} />
+            </h2>
             <InfoBox>
               {description.split("\\").map((item) => (
-                <Li>{item}</Li>
+                <Li>• {item}</Li>
               ))}
             </InfoBox>
           </CenterBox>
@@ -44,7 +98,6 @@ export default Achieve;
 
 let Background = styled.div`
   width: 350px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   background: white;
@@ -88,12 +141,13 @@ let ChaImg = styled.img`
 let InfoBox = styled.div`
   font-size: 18px;
   font-weight: 800;
+  color: var(--darkgray);
   background: transparent;
   background: white;
   border-radius: 25px;
   padding: 10px;
-  height: 200px;
-  margin: 20px 20px 0 20px;
+  margin: 20px;
+  line-height: 27px;
 `;
 
 let Li = styled.ol`

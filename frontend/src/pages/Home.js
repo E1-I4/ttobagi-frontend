@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import "../styles/theme.css";
-// import splashImg from "../assets/img/splash.png";
 import bgImg from "../assets/img/mainbg.png";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as MainLogo } from "../assets/svg/logo_main.svg";
@@ -16,19 +15,22 @@ const Home = () => {
     navigate("/map");
   };
 
-  // setTimeout(function () {
-  //   document.getElementById("splash").style.display = "none";
-  // }, 2000);
-
   return (
     <div className="Home">
       <AppLayout>
-        {/* <Splash id="splash"></Splash> */}
-        <Background>
+        <Background
+          style={
+            {
+              // border: "20px solid var(--melange)",
+              // borderRadius: "40px",
+              // margin: "5vw 10vh",
+            }
+          }
+        >
           <Title style={{ marginTop: 175 }}>
             <MainLogo />
             <SubTitle>
-              <span>
+              <span style={{ color: "var(--gray)" }}>
                 제주도의
                 <span style={{ color: "var(--orange)" }}> 멸종위기 동물</span>을
                 위한 도감
@@ -49,23 +51,14 @@ const Home = () => {
 
 export default Home;
 
-// let Splash = styled.div`
-//   width: 350px;
-//   height: 100vh;
-//   background-image: url(${splashImg});
-//   background-size: cover;
-//   background-repeat: none;
-//   position: absolute;
-// `;
-
 let Background = styled.div`
   width: 350px;
   height: 100vh;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-image: url(${bgImg});
-  background-repeat: no-repeat;
   background-size: cover;
 `;
 
@@ -75,11 +68,11 @@ let Title = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-weight: 800;
 `;
 
 let SubTitle = styled.div`
   font-size: 19px;
-  font-weight: 800;
 `;
 
 let Button = styled.button`
