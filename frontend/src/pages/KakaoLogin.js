@@ -28,34 +28,11 @@ const KakaoLogin = () => {
           JWT_EXPIRE_TIME - 60000,
           res.refresh_token
         ); // 1 minute before expiration
-        setTimeout(function () {
-          document.getElementById("splash").style.display = "block";
-        }, 2000);
         navigate("/");
       });
   }, []);
-  return (
-    <>
-      <SplashBox style={{ position: "relative" }}>
-        <Splash id="splash"></Splash>
-      </SplashBox>
-    </>
-  );
+  return <></>;
   //이쪽에 스플래시를 넣어봅시다
 };
-
-let SplashBox = styled.div`
-  text-align: center;
-`;
-
-let Splash = styled.div`
-  width: 350px;
-  height: 100vh;
-  background-image: url(${splashImg});
-  background-size: cover;
-  background-repeat: none;
-  position: absolute;
-  display: none;
-`;
 
 export default KakaoLogin;

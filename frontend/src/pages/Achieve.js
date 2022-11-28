@@ -59,14 +59,14 @@ const Achieve = () => {
       <AppLayout>
         <Background>
           <Content>
-            <HomeIcon href="/" style={{ marginTop: 40, marginBottom: 10 }}>
+            <HomeIcon href="/" style={{ marginTop: 50 }}>
               <img src={homeIcon} />
             </HomeIcon>
             <Title>
               <span
                 style={{
                   margin: 0,
-                  fontSize: 24,
+                  fontSize: 26,
                   fontWeight: 800,
                   color: "var(--darkgray)",
                 }}
@@ -79,12 +79,12 @@ const Achieve = () => {
           </Content>
           <CenterBox>
             <ChaImg src={image} alt={name}></ChaImg>
-            <h2 style={{ marginTop: 20, marginBottom: 20 }}>
-              <img src={animal_name_color} alt={name} />
-            </h2>
+            <span style={{ marginTop: 30 }}>
+              <img src={animal_name_color} alt={name} style={{ width: 120 }} />
+            </span>
             <InfoBox>
               {description.split("\\").map((item) => (
-                <Li>• {item}</Li>
+                <Li style={{ wordBreak: "keep-all" }}>{item}</Li>
               ))}
             </InfoBox>
           </CenterBox>
@@ -123,6 +123,7 @@ let Title = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px 0 30px 0;
+  letter-spacing: -0.03em;
 `;
 
 let CenterBox = styled.div`
@@ -133,13 +134,13 @@ let CenterBox = styled.div`
 
 let ChaImg = styled.img`
   border-radius: 25px;
-  width: 200px;
-  height: 250px;
+  width: 180px;
+  height: 220px;
   margin: 0 20px;
 `;
 
 let InfoBox = styled.div`
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   color: var(--darkgray);
   background: transparent;
@@ -148,6 +149,7 @@ let InfoBox = styled.div`
   padding: 10px;
   margin: 20px;
   line-height: 27px;
+  letter-spacing: -0.03em;
 `;
 
 let Li = styled.ol`

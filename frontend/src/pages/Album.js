@@ -35,14 +35,21 @@ const Album = () => {
       <AppLayout>
         <Background>
           <Content>
-            <a href="/" style={{ marginTop: 40, marginBottom: 10 }}>
+            <a href="/" style={{ marginTop: 50 }}>
               <img src={arrowLeft} />
             </a>
-            <h2 style={{ marginBottom: 30 }}>
+            <span
+              style={{
+                margin: "25px 0 30px 0",
+                fontSize: 26,
+                color: "var(--darkgray)",
+                fontWeight: 800,
+              }}
+            >
               지금까지 수집한
               <br></br>
               동물들이에요
-            </h2>
+            </span>
           </Content>
           <ImgListBlock>
             {animals?.length &&
@@ -83,5 +90,5 @@ let ImgListBlock = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin: 0 20px;
-  height: 130vh;
+  height: 350px;
 `;

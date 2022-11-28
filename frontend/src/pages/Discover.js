@@ -13,8 +13,6 @@ const Discover = () => {
 
   const [animals, setAnimals] = useState({});
 
-  // axios 쓰지말고 fetch 로 바로 받아오기 ..
-  // fetch할 때 url 에 , 하고 중괄호
   const fetchData = async () => {
     if (axios.defaults.headers.common["Authorization"] === undefined) {
       setAuthorization(sessionStorage.getItem("access_token"));
@@ -99,6 +97,8 @@ let Title = styled.div`
   text-align: left;
   margin: 50px 0 30px 0;
   margin: 80px 20px 40px 20px;
+  line-height: 140%;
+  color: var(--darkgray);
 `;
 
 let ChaImg = styled.img`

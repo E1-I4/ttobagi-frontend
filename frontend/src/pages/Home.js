@@ -60,6 +60,7 @@ let Background = styled.div`
   align-items: center;
   background-image: url(${bgImg});
   background-size: cover;
+  letter-spacing: -0.03em;
 `;
 
 let Title = styled.div`

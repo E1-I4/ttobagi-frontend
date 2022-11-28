@@ -48,6 +48,13 @@ const Recycle = () => {
     });
   });
 
+  // $("#drag1").draggable();
+  // $("#div1").droppable({
+  //   drop: function (event, ui) {
+  //     $(this).addClass("isDropped").html("Dropped!");
+  //   },
+  // });
+
   return (
     <div className="Recycle">
       <AppLayout>
@@ -110,6 +117,8 @@ let Trash = styled.img`
 `;
 
 let Guide = styled.span`
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gray);
+  letter-spacing: -0.03em;
 `;

@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import { useNavigate } from "react-router-dom";
-
 import arrowLeft from "../assets/img/arrowLeft.png";
 import axios from "axios";
 import { BACKEND_URL } from "../utils/Urls";
@@ -289,17 +288,19 @@ const Map = () => {
             <a href="/" style={{ marginTop: 50, marginBottom: 10 }}>
               <img src={arrowLeft} />
             </a>
-            <h2
+            <div
               style={{
                 fontWeight: 800,
                 fontSize: 26,
                 color: "var(--darkgray)",
+                margin: "10px 0 10px 0",
+                lineHeight: "140%",
               }}
             >
               제주도에서
               <br></br>
               멸종위기 동물을 찾아봐요
-            </h2>
+            </div>
             <span style={{ fontSize: 12, color: "var(--lightgray)" }}>
               내 위치가 표시될 때까지 잠시만 기다려주세요
             </span>
@@ -323,6 +324,7 @@ let Background = styled.div`
   flex-direction: column;
   // align-items: center;
   background: white;
+  letter-spacing: -0.03em;
 `;
 
 let Content = styled.div`
