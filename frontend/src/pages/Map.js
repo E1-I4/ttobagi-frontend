@@ -16,7 +16,7 @@ const Map = () => {
   const [animals, setAnimals] = useState({});
   const fetchData = async () => {
     const { data } = await axios
-      .get(`${BACKEND_URL}/api/animal/`)
+      .get(`${BACKEND_URL}/api/animals/`)
       .catch(function (error) {
         // error 확인 함수
         // if (error.response) {
@@ -113,43 +113,42 @@ const Map = () => {
         title: "제주특별자치도 제주시 아라일동 산 66-5",
         content: "<div>붉은박쥐</div>",
         latlng: new kakao.maps.LatLng(33.424496, 126.558734),
-        // sill: animals[0].sill,
+        // sil: animals[0].sil,
       },
       {
         id: 2,
         title: "제주특별자치도 제주시 오등동 산 182",
         content: "<div>제주검독수리</div>",
         latlng: new kakao.maps.LatLng(33.376665, 126.542212),
-        // sill: animals[2].sill,
+        // sil: animals[2].sil,
       },
       {
         id: 3,
         title: "제주특별자치도 서귀포시 상효동 산 1-2",
         content: "<div>비바리뱀</div>",
         latlng: new kakao.maps.LatLng(33.34696, 126.545547),
-        // sill: animals[3].sill,
+        // sil: animals[3].sil,
       },
       {
         id: 4,
         title: "제주특별자치도 서귀포시 성산읍 성산리 78",
         content: "<div>나팔고둥</div>",
         latlng: new kakao.maps.LatLng(33.4587135, 126.9390786),
+        // sil: animals[4].sil
       },
       {
         id: 5,
         title: "제주특별자치도 서귀포시 대정읍 상모리 2973-8",
         content: "<div>갯게</div>",
         latlng: new kakao.maps.LatLng(33.218044, 126.264616),
-        // sill: animals[5].sill,
+        // sil: animals[5].sil,
       },
-
       // {
       //   id: 6,
       //   title: "제주특별자치도 서귀포시 성산읍 성산리 78",
       //   content: "<div>팔색조</div>",
       //   latlng: new kakao.maps.LatLng(33.452352, 126.917965),
       // },
-
       // 가짜 데이터
       // {
       //   title: "제주특별자치도 제주시 용담이동 2002",
@@ -194,7 +193,7 @@ const Map = () => {
       // var latlng = new kakao.maps.LatLng(animal.latitude, animal.longtitude);
 
       let markerId = positions[i].id;
-      // let mapSill = positions[i].sill;
+      // let mapSil = positions[i].sil;
       // 마커를 생성합니다
       var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
@@ -202,7 +201,7 @@ const Map = () => {
         title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
         image: markerImage, // 마커 이미지
         id: markerId,
-        // sill: mapSill,
+        // sil: mapSil,
       });
 
       // 마커에 표시할 인포윈도우를 생성합니다
@@ -241,6 +240,11 @@ const Map = () => {
     function makeOverListener(map, marker, infowindow) {
       return function () {
         infowindow.open(map, marker);
+        // 여기에 이곳에는 이런동물이 서식해요 html 태그로 말해줘도 괜찮을 듯
+        <div>
+          이곳에는 <br />
+          이런 동물이 서식해요
+        </div>;
       };
     }
 
@@ -248,6 +252,8 @@ const Map = () => {
     function makeOutListener(infowindow) {
       return function () {
         infowindow.close();
+        // 여기에 이곳에는 이런동물이 서식해요 html 태그 다시 아무내용도 없이 만들어줌.
+        <div></div>;
       };
     }
 

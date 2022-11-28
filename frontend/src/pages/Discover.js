@@ -4,6 +4,7 @@ import AppLayout from "../components/AppLayout";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { BACKEND_URL } from "../utils/Urls";
+import { setAuthorization } from "../utils/Token";
 
 const Discover = () => {
   const navigate = useNavigate();
@@ -12,7 +13,12 @@ const Discover = () => {
 
   const [animals, setAnimals] = useState({});
 
+  // axios 쓰지말고 fetch 로 바로 받아오기 ..
+  // fetch할 때 url 에 , 하고 중괄호
   const fetchData = async () => {
+    if (axios.defaults.headers.common["Authorization"] === undefined) {
+      setAuthorization(sessionStorage.getItem("access_token"));
+    }
     const { data } = await axios
       .get(`${BACKEND_URL}/api/animals/${id}`)
       .catch(function (error) {
