@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import { useNavigate } from "react-router-dom";
-
 import arrowLeft from "../assets/img/arrowLeft.png";
 import axios from "axios";
 import { BACKEND_URL } from "../utils/Urls";

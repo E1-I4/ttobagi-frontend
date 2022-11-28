@@ -11,7 +11,6 @@ const Discover = () => {
   const { id } = location.state;
 
   const [animals, setAnimals] = useState({});
-
   const fetchData = async () => {
     const { data } = await axios
       .get(`${BACKEND_URL}/api/animals/${id}`)
