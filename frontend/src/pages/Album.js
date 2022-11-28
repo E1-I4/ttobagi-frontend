@@ -9,7 +9,8 @@ import { BACKEND_URL } from "../utils/Urls";
 import { setAuthorization } from "../utils/Token";
 
 const Album = () => {
-  const [animals, setAnimals] = useState(null);
+  const [animals, setAnimals] = useState([]);
+  const [userAnimals, setUserAnimals] = useState([]);
 
   const user_id = sessionStorage.getItem("user_id");
 
@@ -19,6 +20,11 @@ const Album = () => {
     }
     const { data } = await axios.get(`${BACKEND_URL}/api/animals/`);
     setAnimals(data);
+
+    const { data: userData } = await axios.get(
+      `${BACKEND_URL}/api/user/${user_id}/animals/`
+    );
+    setUserAnimals(userData);
   };
   useEffect(() => {
     fetchData();
@@ -41,7 +47,11 @@ const Album = () => {
           <ImgListBlock>
             {animals?.length &&
               animals.map((animal) => (
-                <AlbumItem key={animal.name} animal={animal} />
+                <AlbumItem
+                  key={animal.name}
+                  animal={animal}
+                  userAnimals={userAnimals}
+                />
               ))}
           </ImgListBlock>
         </Background>

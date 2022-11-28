@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 const Info = () => {
   const location = useLocation();
 
-  const { name, image, description } = location.state;
+  const { name, image, animal_name, description } = location.state;
 
   return (
     <div className="Info">
@@ -20,7 +20,9 @@ const Info = () => {
           </Content>
           <CenterBox>
             <ChaImg src={image} alt={name}></ChaImg>
-            <h2>{name}</h2>
+            <h2>
+              <img src={animal_name} />
+            </h2>
             <InfoBox>
               {description.split("\\").map((item) => (
                 <Li>• {item}</Li>
