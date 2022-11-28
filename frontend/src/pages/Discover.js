@@ -4,6 +4,7 @@ import AppLayout from "../components/AppLayout";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { BACKEND_URL } from "../utils/Urls";
+import { setAuthorization } from "../utils/Token";
 
 const Discover = () => {
   const navigate = useNavigate();
@@ -11,7 +12,11 @@ const Discover = () => {
   const { id } = location.state;
 
   const [animals, setAnimals] = useState({});
+
   const fetchData = async () => {
+    if (axios.defaults.headers.common["Authorization"] === undefined) {
+      setAuthorization(sessionStorage.getItem("access_token"));
+    }
     const { data } = await axios
       .get(`${BACKEND_URL}/api/animals/${id}`)
       .catch(function (error) {
