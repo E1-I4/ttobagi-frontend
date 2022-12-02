@@ -52,8 +52,10 @@ const Home = () => {
 export default Home;
 
 let Background = styled.div`
-  width: 350px;
+  width: 370px;
   height: 100vh;
+  // min-height: 750px;
+  // max-height: 800px;
   box-shadow: none;
   display: flex;
   flex-direction: column;
