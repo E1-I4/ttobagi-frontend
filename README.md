@@ -70,10 +70,9 @@
 <img width="2119" alt="Slide 16_9 - 2" src="https://user-images.githubusercontent.com/71865277/205437928-058b6911-d709-4879-8253-86da531848c6.png">
 
 
-<aside>
-⚙ **안전하고 안정적인 배포를 위한 아키텍쳐 구성**
+<br />
 
-</aside>
+> ⚙ **안전하고 안정적인 배포를 위한 아키텍쳐 구성**
 
 - 직접 구입한 Domain(ttobagi.site) 연결과 SSL인증을 적용(프론트: [www.ttobagi.site](http://www.ttobagi.site), 백엔드: api.ttobagi.site)하여 안전한 웹서버를 구축했어요.
 - 프론트는 **Cloud Front**와 **S3**를 이용해 정적 웹 호스팅으로 배포하였고, 백엔드는 **ELB**와 **EC2(t2.micro)**를 연결해 배포했어요.
@@ -86,74 +85,60 @@
 ## 🦀 프론트엔드에서 활용된 기술이 궁금해요.
 
 
-<aside>
-🔥 **쉽고 빠른 사용자 경험을 제공하는 Single Page Application**
+<br />
 
-</aside>
+> 🔥 **쉽고 빠른 사용자 경험을 제공하는 Single Page Application**
 
-- 아래 기술을 사용해 React 프로젝트를 구현했어요.
+아래 기술을 사용해 React 프로젝트를 구현했어요.
+- React : JSX 문법과 Virtual DOM을 사용하는 JavaScript SPA 라이브러리
+- Axios : Node.js와 브라우저를 위한  HTTP 클라이언트
 
-<aside>
-🗺️ **Kakao Map API에 여러 기능을 추가한 지도 구현**
+<br />
 
-</aside>
+> 🗺️ **Kakao Map API에 여러 기능을 추가한 지도 구현**
 
 - 카카오맵 API를 사용해 지도 기능을 구현했어요.
 - Geolocation을 활용해 사용자의 현재 위치를 표시했어요.
     - 다양한 브라우저를 지원하기 위해 SSL 인증서를 생성하여 https 환경으로 변경했어요.
 - 다수의 마커를 생성하고, 마커 위에 마우스를 올려놓으면 이름과 주소가 보이도록 만들었어요.
 
-<aside>
-🎨 **Styled-Components를 사용한 컴포넌트별 스타일 적용**
+<br />
 
-</aside>
+> 🎨 **Styled-Components를 사용한 컴포넌트별 스타일 적용**
 
 - 별도의 CSS 파일 없이 Styled-Components를 사용해 컴포넌트별로 스타일을 적용했어요.
 - 컴포넌트 단위 스타일링을 통해 코드 재사용성을 높이고, 효과적인 UI 단위 테스트를 진행할 수 있어요.
 
-<aside>
-👤 **Kakao Login Api를 활용한 로그인 구현**
+<br />
 
-</aside>
+> 👤 **Kakao Login Api를 활용한 로그인 구현**
 
 - 카카오로부터 인가코드를 받고 백엔드에 넘겨주는 역할을 했어요.
 - 백엔드에서 온 토큰을 확인하고 홈화면으로 리다이렉트 해주었어요.
 
-<aside>
-💡 **Axios 라이브러리를 활용한 HTTP 비동기 통신 라이브러리**
+<br />
 
-</aside>
+> 💡 **Axios 라이브러리를 활용한 HTTP 비동기 통신 라이브러리**
 
 - 요청 객체에 url이 존재하고 자동으로 JSON 데이터 형식으로 전환해주어 사용했어요.
 - react hook 기반에서는 useEffect를 사용해 lifeCycle을 관리했어요.
 - 사용자가 수집한 동물 도감을 전체 도감과 비교해 수집하지 않은 것은 색깔이 없는 이미지로 가져왔어요.
 
+<br />
+
 ## 🦀 백엔드에서 활용된 기술이 궁금해요.
 
-<aside>
-🔥 **쉽고 빠르게 조회 · 추가 할 수 있는 동물 도감 API 구축**
 
-</aside>
+> 🔥 **쉽고 빠르게 조회 · 추가 할 수 있는 동물 도감 API 구축**
 
-- 아래 기술을 사용해 REST API 서버를 설계 및 배포했어요.
+아래 기술을 사용해 REST API 서버를 설계 및 배포했어요.
+- Django Rest Framework (DRF) : Python 기반의 Django REST API 프레임워크
+- NGINX : 빠른 정적파일(이미지 등) 서빙 담당
+동물 도감을 쉽게 조회 및 추가할 수 있도록 모델 API를 설계했어요.
 
-<aside>
-Python 기반의 Django REST API 프레임워크
+<br />
 
-</aside>
-
-<aside>
-**NGINX**
-빠른 정적파일(이미지 등) 서빙 담당
-
-</aside>
-
-- 동물 도감을 쉽게 조회 및 추가할 수 있도록 모델 API를 설계했어요.
-
-<aside>
-🔒 **Kakao Social Login과 JWT를 활용한 안전한 로그인**
-
-</aside>
+> 🔒 **Kakao Social Login과 JWT를 활용한 안전한 로그인**
 
 - [JSON Web Token (JWT)](https://jwt.io/introduction)을 이용해 안전한 로그인 API를 구현했어요.
 - 백엔드에서 카카오 로그인 API를 JWT와 연결하여 더욱 안전한 로그인 API를 설계했어요.
@@ -163,18 +148,16 @@ Python 기반의 Django REST API 프레임워크
 
 # + 앞으로의 계획
 
-<br />
 
-프론트엔드    
+### 프론트엔드    
 
 > 🙋 앞으로 프론트엔드에서는 이런 걸 구현해 볼 예정이에요.
     
     - JavaScript에서 TypeScript로 리팩토링을 진행할 예정이에요.
     - 보다 나은 사용자 경험을 위해 React Native를 활용하여 모바일 앱을 개발할 예정이에요.
+
     
-<br />
-    
-백엔드
+### 백엔드
     
 
 > 🙋 앞으로 백엔드에서는 이런 걸 구현해 볼 예정이에요.
