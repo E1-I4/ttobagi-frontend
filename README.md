@@ -56,13 +56,13 @@
 
 서식지에 도착하면 동물을 찾을 수 있어요! 환경오염으로 인해 아파하는 동물에게 도움을 주어 카드를 수집해 보아요.
 
-<img src="https://user-images.githubusercontent.com/71865277/205438246-6c5141bf-8a32-47f9-b164-f21001f46a70.gif" width=200  />
+<img src="https://user-images.githubusercontent.com/71865277/205437870-3d8213ed-3f23-4b66-a69d-cb42365077a4.gif" width=200  />
 
 ### 📖 도감
 
 수집한 동물들을 도감에서 다시 만나 보아요. 언제나 한결같이 꼭 그렇게 저희 곁에 머무를 거랍니다.
 
-<img src="https://user-images.githubusercontent.com/71865277/205437870-3d8213ed-3f23-4b66-a69d-cb42365077a4.gif" width=200  />
+<img src="https://user-images.githubusercontent.com/71865277/205438246-6c5141bf-8a32-47f9-b164-f21001f46a70.gif" width=200  />
 
 
 ## 🦀 아키텍쳐는 어떻게 구성되어 있나요?
