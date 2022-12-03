@@ -222,7 +222,7 @@ Python 기반의 Django REST API 프레임워크
     <td align="center"><a href="https://github.com/pitangland"><img width="180" alt="Group 427321946" src="https://user-images.githubusercontent.com/71865277/205436905-ed082c2f-1459-4f80-bd53-5b99728f3954.png">
 <br /><sub><b>프론트엔드 : 김원표</b></sub></a></td>
     <td align="center"><a href="https://github.com/jangjia01234"><img width="180" alt="Group 427321947" src="https://user-images.githubusercontent.com/71865277/205436968-bb630e9e-52f8-4445-9536-52d73af4788f.png">
-<br /><sub><b>프론트엔드 | 팀장 : 장지아</b></sub></a></td>
+<br /><sub><b>프론트엔드 : 장지아(팀장)</b></sub></a></td>
     <td align="center"><a href="https://github.com/echo724"><img width="180" alt="제주검독수리 카드 2차 수정" src="https://user-images.githubusercontent.com/71865277/205437006-e5dfe5c7-8fbc-4e53-bf9a-2f552b1c3c31.png">
 <br /><sub><b>백엔드 : 조은찬</b></sub></a></td>
     <td align="center"><a href="https://github.com/shs6626"><img width="180" alt="Group 427321952" src="https://user-images.githubusercontent.com/71865277/205437042-80c8879a-da5f-4c96-989e-7546facf0399.png">
