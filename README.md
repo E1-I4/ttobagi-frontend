@@ -188,11 +188,13 @@ Python 기반의 Django REST API 프레임워크
 🤼 E가 1명, I가 4명… (그래서 원래 팀 이름이 E1I4였지만 읽기가 어려워 개명했어요😂)
 </aside>
 
-[%EB%98%90%EB%B0%94%EA%B8%B0%EB%8F%84%EA%B0%90_%ED%8C%80%EC%86%8C%EA%B0%9C_2](https://user-images.githubusercontent.com/71865277/205436347-c56ab3c5-b40b-4c7e-b1e2-ec1758169e03.png)
+
+<br />
+
+![%EB%98%90%EB%B0%94%EA%B8%B0%EB%8F%84%EA%B0%90_%ED%8C%80%EC%86%8C%EA%B0%9C_2](https://user-images.githubusercontent.com/71865277/205436421-5e44fe03-74e1-4d05-9c60-9e740bacd254.png)
+
 
 왼쪽부터 순서대로 또바기 팀원들을 소개해 드려요.
-
-[제목 없음](https://www.notion.so/143fa331e6ae4576a54a8aad420d4fab)
 
 ---
 
