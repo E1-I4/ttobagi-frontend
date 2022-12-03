@@ -90,38 +90,38 @@
 
 ## 🦀 프론트엔드에서 활용된 기술이 궁금해요.
 
-
 <br />
 
 > 🔥 **쉽고 빠른 사용자 경험을 제공하는 Single Page Application**
 
 아래 기술을 사용해 React 프로젝트를 구현했어요.
-- React : JSX 문법과 Virtual DOM을 사용하는 JavaScript SPA 라이브러리
-- Styled-Components : 컴포넌트 단위 스타일링을 지원하는 CSS-in-JS 라이브러리
+
+    - React : JSX 문법과 Virtual DOM을 사용하는 JavaScript SPA 라이브러리
+    - Styled-Components : 컴포넌트 단위 스타일링을 지원하는 CSS-in-JS 라이브러리
 
 <br />
 
 > 🗺️ **Kakao Map API에 여러 기능을 추가한 지도 구현**
 
-- 카카오맵 API를 사용해 지도 기능을 구현했어요.
-- Geolocation을 활용해 사용자의 현재 위치를 표시했어요.
-    - 다양한 브라우저를 지원하기 위해 SSL 인증서를 생성하여 https 환경으로 변경했어요.
-- 다수의 마커를 생성하고, 마커 위에 마우스를 올려놓으면 이름과 주소가 보이도록 만들었어요.
+    - 카카오맵 API를 사용해 지도 기능을 구현했어요.
+    - Geolocation을 활용해 사용자의 현재 위치를 표시했어요.
+        - 다양한 브라우저를 지원하기 위해 SSL 인증서를 생성하여 https 환경으로 변경했어요.
+    - 다수의 마커를 생성하고, 마커 위에 마우스를 올려놓으면 이름과 주소가 보이도록 만들었어요.
 
 <br />
 
 > 👤 **Kakao Login Api를 활용한 로그인 구현**
 
-- 카카오로부터 인가코드를 받고 백엔드에 넘겨주었어요.
-- 백엔드에서 온 토큰을 확인하고 홈화면으로 리다이렉트 해주었어요.
+    - 카카오로부터 인가코드를 받고 백엔드에 넘겨주었어요.
+    - 백엔드에서 온 토큰을 확인하고 홈화면으로 리다이렉트 해주었어요.
 
 <br />
 
 > 💡 **Axios 라이브러리를 활용한 HTTP 비동기 통신 라이브러리**
 
-- 요청 객체에 url이 존재하고 자동으로 JSON 데이터 형식으로 전환해주어 사용했어요.
-- react hook 기반에서는 useEffect를 사용해 lifeCycle을 관리했어요.
-- 사용자가 수집한 동물 도감을 전체 도감과 비교해 수집하지 않은 것은 색깔이 없는 이미지로 가져왔어요.
+    - 요청 객체에 url이 존재하고 자동으로 JSON 데이터 형식으로 전환해주어 사용했어요.
+    - react hook 기반에서는 useEffect를 사용해 lifeCycle을 관리했어요.
+    - 사용자가 수집한 동물 도감을 전체 도감과 비교해 수집하지 않은 것은 색깔이 없는 이미지로 가져왔어요.
 
 <br />
 
@@ -131,16 +131,18 @@
 > 🔥 **쉽고 빠르게 조회 · 추가 할 수 있는 동물 도감 API 구축**
 
 아래 기술을 사용해 REST API 서버를 설계 및 배포했어요.
-- Django Rest Framework (DRF) : Python 기반의 Django REST API 프레임워크
-- NGINX : 빠른 정적파일(이미지 등) 서빙 담당
+
+    - Django Rest Framework (DRF) : Python 기반의 Django REST API 프레임워크
+    - NGINX : 빠른 정적파일(이미지 등) 서빙 담당
+    
 동물 도감을 쉽게 조회 및 추가할 수 있도록 모델 API를 설계했어요.
 
 <br />
 
 > 🔒 **Kakao Social Login과 JWT를 활용한 안전한 로그인**
 
-- [JSON Web Token (JWT)](https://jwt.io/introduction)을 이용해 안전한 로그인 API를 구현했어요.
-- 백엔드에서 카카오 로그인 API를 JWT와 연결하여 더욱 안전한 로그인 API를 설계했어요.
+    - [JSON Web Token (JWT)](https://jwt.io/introduction)을 이용해 안전한 로그인 API를 구현했어요.
+    - 백엔드에서 카카오 로그인 API를 JWT와 연결하여 더욱 안전한 로그인 API를 설계했어요.
 
 
 ---
@@ -149,16 +151,21 @@
 
 # + 앞으로의 계획
 
-
-### 프론트엔드    
+<details>
+<summary> 프론트엔드  </summary>  
+<div markdown="1">
 
 > 🙋 앞으로 프론트엔드에서는 이런 걸 구현해 볼 예정이에요.
     
     - JavaScript에서 TypeScript로 리팩토링을 진행할 예정이에요.
     - 보다 나은 사용자 경험을 위해 React Native를 활용하여 모바일 앱을 개발할 예정이에요.
 
+</div>
+</details>
     
-### 백엔드
+<details>
+<summary> 백엔드  </summary>  
+<div markdown="1">
     
 
 > 🙋 앞으로 백엔드에서는 이런 걸 구현해 볼 예정이에요.
@@ -167,7 +174,10 @@
     - 주변 상권 데이터를 조회하여 도감 지도와 연결해볼 예정이에요.
     - 모은 도감이나 동물 카드를 SNS에 공유할 수 있도록 API를 설계할 예정이에요.
     - 더욱 간편하고 안정적인 배포를 위해 Kubernetes를 도입해볼 예정이예요.
-    
+
+</div>
+</details>
+
 ---
 
 <br />
