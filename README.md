@@ -51,19 +51,18 @@
 
 제주도 지도에서 서식지를 클릭해 동물의 실루엣으로 흥미로운 힌트를 얻고 해당 지역에 직접 방문해 보아요.
 
-![%EB%85%B9%ED%99%94_2022_11_27_16_01_39_686_Trim_AdobeExpress](https://user-images.githubusercontent.com/71865277/205437831-698c1e81-c073-4f71-b2c1-2bbc371313f3.gif)
+<img src="https://user-images.githubusercontent.com/71865277/205437831-698c1e81-c073-4f71-b2c1-2bbc371313f3.gif" width=200 />
 
 
 서식지에 도착하면 동물을 찾을 수 있어요! 환경오염으로 인해 아파하는 동물에게 도움을 주어 카드를 수집해 보아요.
 
-![%EB%85%B9%ED%99%94_2022_11_27_16_05_25_499_Trim_Trim_Trim_AdobeExpress](https://user-images.githubusercontent.com/71865277/205437863-0400f736-c0a4-4bda-9ba1-661e58ec4ba8.gif)
-
+<img src="https://user-images.githubusercontent.com/71865277/205438246-6c5141bf-8a32-47f9-b164-f21001f46a70.gif" width=200 />
 
 ### 📖 도감
 
 수집한 동물들을 도감에서 다시 만나 보아요. 언제나 한결같이 꼭 그렇게 저희 곁에 머무를 거랍니다.
 
-![%EB%85%B9%ED%99%94_2022_11_27_16_29_56_315_Trim_AdobeExpress](https://user-images.githubusercontent.com/71865277/205437870-3d8213ed-3f23-4b66-a69d-cb42365077a4.gif)
+<img src="https://user-images.githubusercontent.com/71865277/205437870-3d8213ed-3f23-4b66-a69d-cb42365077a4.gif" width=200 />
 
 
 ## 🦀 아키텍쳐는 어떻게 구성되어 있나요?
