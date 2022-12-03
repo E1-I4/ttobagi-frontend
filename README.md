@@ -206,8 +206,8 @@ Python 기반의 Django REST API 프레임워크
 
 > 🙋 앞으로 프론트엔드에서는 이런 걸 구현해 볼 예정이에요.
     
-    - JavaScript에서 TypeScript로 리팩토링을 진행할 예정이예요.
-    - 보다 나은 사용자 경험을 위해 React Native를 활용하여 모바일 앱을 개발할 예정이예요.
+    - JavaScript에서 TypeScript로 리팩토링을 진행할 예정이에요.
+    - 보다 나은 사용자 경험을 위해 React Native를 활용하여 모바일 앱을 개발할 예정이에요.
     
 <br />
     
