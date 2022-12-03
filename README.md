@@ -91,7 +91,7 @@
 
 아래 기술을 사용해 React 프로젝트를 구현했어요.
 - React : JSX 문법과 Virtual DOM을 사용하는 JavaScript SPA 라이브러리
-- Axios : Node.js와 브라우저를 위한  HTTP 클라이언트
+- Styled-Components : 컴포넌트 단위 스타일링을 지원하는 CSS-in-JS 라이브러리
 
 <br />
 
@@ -101,13 +101,6 @@
 - Geolocation을 활용해 사용자의 현재 위치를 표시했어요.
     - 다양한 브라우저를 지원하기 위해 SSL 인증서를 생성하여 https 환경으로 변경했어요.
 - 다수의 마커를 생성하고, 마커 위에 마우스를 올려놓으면 이름과 주소가 보이도록 만들었어요.
-
-<br />
-
-> 🎨 **Styled-Components를 사용한 컴포넌트별 스타일 적용**
-
-- 별도의 CSS 파일 없이 Styled-Components를 사용해 컴포넌트별로 스타일을 적용했어요.
-- 컴포넌트 단위 스타일링을 통해 코드 재사용성을 높이고, 효과적인 UI 단위 테스트를 진행할 수 있어요.
 
 <br />
 
