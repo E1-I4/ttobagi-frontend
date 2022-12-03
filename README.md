@@ -1,4 +1,4 @@
-# <a href="www.ttobagi.site"> [또바기도감] </a> 제주 멸종위기 동물 도감
+# [또바기도감] 제주 멸종위기 동물 도감
 
 ![또바기도감 노션 메인비주얼](https://user-images.githubusercontent.com/71865277/205436713-ff040556-fa2b-4536-8c0c-c780dcef38fc.jpg)
 
