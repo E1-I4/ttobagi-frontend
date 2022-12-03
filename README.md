@@ -3,7 +3,7 @@
 ![또바기도감 노션 메인비주얼](https://user-images.githubusercontent.com/71865277/205436713-ff040556-fa2b-4536-8c0c-c780dcef38fc.jpg)
 
 
-> 본 프로젝트는 2022년 11월 카카오 구름에서 주최하여 진행한 제 3회 Kakao 9rumthon 출품작입니다.
+> 본 프로젝트는 2022년 11월 카카오, 구름에서 주최하여 진행한 제 3회 9oorumthon 출품작입니다.
 
 
 # ❶ **배경**
