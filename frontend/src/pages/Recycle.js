@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import "../styles/theme.css";
 import { useNavigate, useLocation } from "react-router-dom";
-// import { ReactComponent as PetBin } from "../assets/svg/pet_bin.svg";
+import { DndContext } from "@dnd-kit/core";
+import { TargetContainer } from './TargetContainer';
+import { TrashContainer } from './TrashContainer';
+
 
 const Recycle = () => {
   const location = useLocation();
@@ -22,14 +25,21 @@ const Recycle = () => {
   } = location.state;
   const navigate = useNavigate();
 
-  const dragFunction = (event, type) => {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log(type);
-  };
-
-  useEffect(() => {
-    document.getElementById("petbtn").addEventListener("drop", function () {
+  return (
+    <div className="Recycle">
+      <AppLayout>
+        <Background>
+          <DndContext onDragEnd={handleDragEnd}>
+            <TargetContainer><Target src={target} alt={name}></Target></TargetContainer>
+            <TrashContainer><Trash src={trash} alt={name}></Trash></TrashContainer>
+          </DndContext>
+          <Guide>{trash_description}</Guide>
+        </Background>
+      </AppLayout>
+    </div >
+  );
+  function handleDragEnd(event) {
+    if (event.over && event.over.id === "target-container") {
       navigate("/achieve", {
         state: {
           id,
@@ -44,51 +54,12 @@ const Recycle = () => {
           trash_description,
           description,
         },
-      });
-    });
-  });
-
-  // $("#drag1").draggable();
-  // $("#div1").droppable({
-  //   drop: function (event, ui) {
-  //     $(this).addClass("isDropped").html("Dropped!");
-  //   },
-  // });
-
-  return (
-    <div className="Recycle">
-      <AppLayout>
-        <Background>
-          <FakeTarget
-            // src={target}
-            // alt={name}
-            id="petbtn"
-            onDragOver={(event) => {
-              return dragFunction(event, "over");
-            }}
-            onDrop={(event) => dragFunction(event, "drop")}
-            onDragEnter={(event) => dragFunction(event, "enter")}
-            onDragLeave={(event) => dragFunction(event, "leave")}
-            className="dragAndDrop"
-          >
-            <Target src={target} alt={name}></Target>
-          </FakeTarget>
-          <Trash src={trash} alt={name} draggable></Trash>
-          <Guide>{trash_description}</Guide>
-        </Background>
-      </AppLayout>
-    </div>
-  );
+      })
+    }
+  };
 };
 
 export default Recycle;
-
-// 이름 맞게 수정했습니다 그냥 <FakeTarget> 안에 <Target>으로 이미지 넣어준게 답니다..
-// 조금씩 이미지들이 위치가 다른데 디자이너에게 빌고빌어 target과 trash 위치 통일하는걸로 조정하시면 어떠한지..
-// 확인하시고 요기 다섯개 주석들은 삭제해주세용
-
-// StyledPetBin -> FakeTarget
-// PetImg -> Trash
 
 let Background = styled.div`
   width: 350px;
@@ -100,23 +71,20 @@ let Background = styled.div`
   font-weight: 800;
 `;
 
-let FakeTarget = styled.div`
-  margin-top: 150px;
-  width: 250px;
-  height: 40vh;
-`;
-
 let Target = styled.img`
   width: 100%;
 `;
 
 let Trash = styled.img`
   width: 160px;
+  max-height: 200px;
   margin-left: 150px;
-  margin-bottom: 70px;
+  touch-action: none;
 `;
 
 let Guide = styled.span`
+  position: absolute;
+  bottom: 20px;
   font-size: 20px;
   font-weight: 800;
   color: var(--gray);
