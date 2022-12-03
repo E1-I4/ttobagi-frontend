@@ -1,6 +1,10 @@
 # [또바기도감] 제주 멸종위기 동물 도감
 
-![또바기도감 노션 메인비주얼.jpg](%5B%E1%84%84%E1%85%A9%E1%84%87%E1%85%A1%E1%84%80%E1%85%B5%E1%84%83%E1%85%A9%E1%84%80%E1%85%A1%E1%86%B7%5D%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%AE%20%E1%84%86%E1%85%A7%E1%86%AF%E1%84%8C%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B1%E1%84%80%E1%85%B5%20%E1%84%83%E1%85%A9%E1%86%BC%E1%84%86%E1%85%AE%E1%86%AF%20%E1%84%83%E1%85%A9%E1%84%80%E1%85%A1%E1%86%B7%20fa635908c2e740edbf9d9490581956ce/%25EB%2598%2590%25EB%25B0%2594%25EA%25B8%25B0%25EB%258F%2584%25EA%25B0%2590_%25EB%2585%25B8%25EC%2585%2598_%25EB%25A9%2594%25EC%259D%25B8%25EB%25B9%2584%25EC%25A3%25BC%25EC%2596%25BC.jpg)
+![또바기도감 노션 메인비주얼](https://user-images.githubusercontent.com/71865277/205436713-ff040556-fa2b-4536-8c0c-c780dcef38fc.jpg)
+
+
+> 본 프로젝트는 2022년 11월 카카오 구름에서 주최하여 진행한 제 3회 Kakao 9rumthon 출품작입니다.
+
 
 # ❶ **배경**
 
@@ -195,6 +199,19 @@ Python 기반의 Django REST API 프레임워크
 
 
 왼쪽부터 순서대로 또바기 팀원들을 소개해 드려요.
+
+<table>
+<tr>
+    <td align="center"><a href="https://www.behance.net/gabinyun"><img width="195" alt="Group 427321978" src="https://user-images.githubusercontent.com/71865277/205436853-85f9f9ce-1707-4470-84f2-c236b67bb03d.png"
+/><br /><sub><b>디자이너 : 윤가빈</b></sub></a></td>
+    <td align="center"><a href="https://github.com/pitangland"><img width="195" alt="Group 427321946" src="https://user-images.githubusercontent.com/71865277/205436905-ed082c2f-1459-4f80-bd53-5b99728f3954.png">
+<br /><sub><b>프론트엔드 : 김원표</b></sub></a></td>
+    <td align="center"><a href="https://github.com/jangjia01234"><img width="195" alt="Group 427321947" src="https://user-images.githubusercontent.com/71865277/205436968-bb630e9e-52f8-4445-9536-52d73af4788f.png">
+<br /><sub><b>프론트엔드 | 팀장 : 장지아</b></sub></a></td>
+    <td align="center"><a href="https://github.com/echo724"><img width="195" alt="제주검독수리 카드 2차 수정" src="https://user-images.githubusercontent.com/71865277/205437006-e5dfe5c7-8fbc-4e53-bf9a-2f552b1c3c31.png">
+<br /><sub><b>백엔드 : 조은찬</b></sub></a></td>
+    <td align="center"><a href="https://github.com/shs6626"><img width="195" alt="Group 427321952" src="https://user-images.githubusercontent.com/71865277/205437042-80c8879a-da5f-4c96-989e-7546facf0399.png">
+<br /><sub><b>기획 : 신홍석</b></sub></a></td>
 
 ---
 
