@@ -79,7 +79,7 @@
 > ⚙ **안전하고 안정적인 배포를 위한 아키텍쳐 구성**
 
 - 직접 구입한 Domain(ttobagi.site) 연결과 SSL인증을 적용(프론트: [www.ttobagi.site](http://www.ttobagi.site), 백엔드: api.ttobagi.site)하여 안전한 웹서버를 구축했어요.
-- 프론트는 **Cloud Front**와 **S3**를 이용해 정적 웹 호스팅으로 배포하였고, 백엔드는 **ELB**와 **EC2(t2.micro)**를 연결해 배포했어요.
+- 프론트는 **Cloud Front**와 **S3**를 이용해 정적 웹 호스팅으로 배포하였고, 백엔드는 **ELB**와 **EC2**를 연결해 배포했어요.
 - 특히 프론트는 Github Action을 이용해 자동 배포 환경을 구성했어요.
 
 ---
@@ -130,12 +130,12 @@
 
 > 🔥 **쉽고 빠르게 조회 · 추가 할 수 있는 동물 도감 API 구축**
 
-아래 기술을 사용해 REST API 서버를 설계 및 배포했어요.
+    - 아래 기술을 사용해 REST API 서버를 설계 및 배포했어요.
 
-    - Django Rest Framework (DRF) : Python 기반의 Django REST API 프레임워크
-    - NGINX : 빠른 정적파일(이미지 등) 서빙 담당
-    
-동물 도감을 쉽게 조회 및 추가할 수 있도록 모델 API를 설계했어요.
+        - Django Rest Framework (DRF) : Python 기반의 Django REST API 프레임워크
+        - NGINX : 빠른 정적파일(이미지 등) 서빙 담당
+
+    - 동물 도감을 쉽게 조회 및 추가할 수 있도록 모델 API를 설계했어요.
 
 <br />
 
@@ -199,13 +199,13 @@
 <table>
 <tr>
     <td align="center"><a href="https://www.behance.net/gabinyun"><img width="180" alt="Group 427321978" src="https://user-images.githubusercontent.com/71865277/205436853-85f9f9ce-1707-4470-84f2-c236b67bb03d.png"
-/><br /><sub><b>디자이너 : 윤가빈</b></sub></a></td>
+/><br /><sub><b>디자이너:윤가빈</b></sub></a></td>
     <td align="center"><a href="https://github.com/pitangland"><img width="180" alt="Group 427321946" src="https://user-images.githubusercontent.com/71865277/205436905-ed082c2f-1459-4f80-bd53-5b99728f3954.png">
-<br /><sub><b>프론트엔드 : 김원표</b></sub></a></td>
+<br /><sub><b>프론트엔드:김원표</b></sub></a></td>
     <td align="center"><a href="https://github.com/jangjia01234"><img width="180" alt="Group 427321947" src="https://user-images.githubusercontent.com/71865277/205436968-bb630e9e-52f8-4445-9536-52d73af4788f.png">
-<br /><sub><b>프론트엔드 : 장지아 (팀장)</b></sub></a></td>
+<br /><sub><b>프론트엔드:장지아 (팀장)</b></sub></a></td>
     <td align="center"><a href="https://github.com/echo724"><img width="180" alt="제주검독수리 카드 2차 수정" src="https://user-images.githubusercontent.com/71865277/205437006-e5dfe5c7-8fbc-4e53-bf9a-2f552b1c3c31.png">
-<br /><sub><b>백엔드 : 조은찬</b></sub></a></td>
+<br /><sub><b>백엔드:조은찬</b></sub></a></td>
     <td align="center"><a href="https://github.com/shs6626"><img width="180" alt="Group 427321952" src="https://user-images.githubusercontent.com/71865277/205437042-80c8879a-da5f-4c96-989e-7546facf0399.png">
-<br /><sub><b>기획 : 신홍석</b></sub></a></td>
+<br /><sub><b>기획:신홍석</b></sub></a></td>
 
