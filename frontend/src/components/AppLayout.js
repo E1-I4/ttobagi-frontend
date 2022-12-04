@@ -13,8 +13,10 @@ let Box = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 350px;
+  width: 370px;
   height: 100vh;
+  // min-height: 750px;
+  // max-height: 800px;
   background: white;
   box-shadow: 0 0 2rem 0.1rem rgba(0, 0, 0, 0.2);
 `;

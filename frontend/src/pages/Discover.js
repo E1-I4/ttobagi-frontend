@@ -18,7 +18,7 @@ const Discover = () => {
       setAuthorization(sessionStorage.getItem("access_token"));
     }
     const { data } = await axios
-      .get(`${BACKEND_URL}/api/animals/${id}`)
+      .get(`${BACKEND_URL}/api/animals/${id}/`)
       .catch(function (error) {
         // error 확인 함수
         // if (error.response) {

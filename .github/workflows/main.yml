@@ -2,9 +2,7 @@ name: master
 
 on:
   push:
-    branches: [ jangjia01234 ]
-  pull_request:
-    branches: [ jangjia01234 ]    # main 브랜치에서 push, pull_request 이벤트가 일어났을 때 실행
+    branches: [ jangjia01234 ]   # main 브랜치에서 push 이벤트가 일어났을 때 실행
 
 jobs:
 
