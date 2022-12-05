@@ -6,11 +6,14 @@ import { useNavigate } from "react-router-dom";
 import arrowLeft from "../assets/img/arrowLeft.png";
 import axios from "axios";
 import { BACKEND_URL } from "../utils/Urls";
+import { SillContainer } from "./SilContainer";
 
 const { kakao } = window;
 
 const Map = () => {
   const navigate = useNavigate();
+
+  const [isSilContainer, setSilContainer] = useState(false);
 
   const [animals, setAnimals] = useState({});
   const fetchData = async () => {
@@ -207,6 +210,11 @@ const Map = () => {
       var infowindow = new kakao.maps.InfoWindow({
         content: positions[i].content, // 인포윈도우에 표시할 내용
       });
+
+      // var infowindow = new kakao.maps.CustomOverlay({
+      //   position: positions[i].latlng,
+      //   content: positions[i].content
+      // })
       // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
       // 이벤트 리스너로는 클로저를 만들어 등록합니다
       // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
@@ -214,11 +222,6 @@ const Map = () => {
         marker,
         "mouseover",
         makeOverListener(map, marker, infowindow)
-        // function showSill() {
-        // flex -> 이곳에는
-        //   이런 동물이 서식해요
-        // <img src={mapSill} alt={name} />
-        // }
       );
       kakao.maps.event.addListener(
         marker,
@@ -239,11 +242,7 @@ const Map = () => {
     function makeOverListener(map, marker, infowindow) {
       return function () {
         infowindow.open(map, marker);
-        // 여기에 이곳에는 이런동물이 서식해요 html 태그로 말해줘도 괜찮을 듯
-        <div>
-          이곳에는 <br />
-          이런 동물이 서식해요
-        </div>;
+        <div></div>;
       };
     }
 
@@ -309,6 +308,7 @@ const Map = () => {
           <MapContainer id="map"></MapContainer>
           {/* <div id="location">여러분의 위치가 여기에 나타날 것입니다.</div>
         <div id="distance">서울시청과의 거리가 여기에 나타날 것입니다.</div> */}
+          <SillContainer animals={animals}></SillContainer>
         </Background>
       </AppLayout>
     </div>
