@@ -97,7 +97,8 @@ const Achieve = () => {
 export default Achieve;
 
 let Background = styled.div`
-  width: 350px;
+  width: 370px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background: white;

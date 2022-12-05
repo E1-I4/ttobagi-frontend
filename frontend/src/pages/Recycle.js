@@ -4,9 +4,8 @@ import AppLayout from "../components/AppLayout";
 import "../styles/theme.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { DndContext } from "@dnd-kit/core";
-import { TargetContainer } from './TargetContainer';
-import { TrashContainer } from './TrashContainer';
-
+import { TargetContainer } from "./TargetContainer";
+import { TrashContainer } from "./TrashContainer";
 
 const Recycle = () => {
   const location = useLocation();
@@ -30,13 +29,17 @@ const Recycle = () => {
       <AppLayout>
         <Background>
           <DndContext onDragEnd={handleDragEnd}>
-            <TargetContainer><Target src={target} alt={name}></Target></TargetContainer>
-            <TrashContainer><Trash src={trash} alt={name}></Trash></TrashContainer>
+            <TargetContainer>
+              <Target src={target} alt={name}></Target>
+            </TargetContainer>
+            <TrashContainer>
+              <Trash src={trash} alt={name}></Trash>
+            </TrashContainer>
           </DndContext>
           <Guide>{trash_description}</Guide>
         </Background>
       </AppLayout>
-    </div >
+    </div>
   );
   function handleDragEnd(event) {
     if (event.over && event.over.id === "target-container") {
@@ -54,15 +57,15 @@ const Recycle = () => {
           trash_description,
           description,
         },
-      })
+      });
     }
-  };
+  }
 };
 
 export default Recycle;
 
 let Background = styled.div`
-  width: 350px;
+  width: 370px;
   height: 100vh;
   display: flex;
   flex-direction: column;
