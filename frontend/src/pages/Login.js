@@ -45,7 +45,8 @@ let Background = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f3f9fd;
+  background-color: #f3f9fd;
+  padding: 0 10px;
 `;
 
 let Title = styled.div`

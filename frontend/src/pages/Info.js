@@ -21,7 +21,7 @@ const Info = () => {
           <CenterBox>
             <ChaImg src={image} alt={name}></ChaImg>
             <span style={{ marginTop: 40, marginBottom: 10 }}>
-              <img src={animal_name} style={{ width: 120 }} />
+              <img src={animal_name} style={{ height: 35 }} />
             </span>
             <InfoBox>
               {description.split("\\").map((item) => (

@@ -87,7 +87,7 @@ let Trash = styled.img`
 
 let Guide = styled.span`
   position: absolute;
-  bottom: 20px;
+  bottom: 80px;
   font-size: 20px;
   font-weight: 800;
   color: var(--gray);
