@@ -71,7 +71,7 @@ export default Album;
 
 let Background = styled.div`
   width: 350px;
-  height: 800px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background: white;
