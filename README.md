@@ -96,8 +96,8 @@
 
 아래 기술을 사용해 React 프로젝트를 구현했어요.
 
-    - React : JSX 문법과 Virtual DOM을 사용하는 JavaScript SPA 라이브러리
-    - Styled-Components : 컴포넌트 단위 스타일링을 지원하는 CSS-in-JS 라이브러리
+    - React: JSX 문법과 Virtual DOM을 사용하는 JavaScript SPA 라이브러리
+    - Styled-Components: 컴포넌트 단위 스타일링을 지원하는 CSS-in-JS 라이브러리
 
 <br />
 
@@ -117,7 +117,7 @@
 
 <br />
 
-> 💡 **Axios 라이브러리를 활용한 HTTP 비동기 통신 라이브러리**
+> 💡 **Axios 라이브러리를 활용한 HTTP 비동기 통신**
 
     - 요청 객체에 url이 존재하고 자동으로 JSON 데이터 형식으로 전환해주어 사용했어요.
     - react hook 기반에서는 useEffect를 사용해 lifeCycle을 관리했어요.
@@ -132,8 +132,8 @@
 
     - 아래 기술을 사용해 REST API 서버를 설계 및 배포했어요.
 
-        - Django Rest Framework (DRF) : Python 기반의 Django REST API 프레임워크
-        - NGINX : 빠른 정적파일(이미지 등) 서빙 담당
+        - Django Rest Framework (DRF): Python 기반의 Django REST API 프레임워크
+        - NGINX: 빠른 정적파일(이미지 등) 서빙 담당
 
     - 동물 도감을 쉽게 조회 및 추가할 수 있도록 모델 API를 설계했어요.
 
@@ -141,7 +141,7 @@
 
 > 🔒 **Kakao Social Login과 JWT를 활용한 안전한 로그인**
 
-    - [JSON Web Token (JWT)](https://jwt.io/introduction)을 이용해 안전한 로그인 API를 구현했어요.
+    - JSON Web Token (JWT)을 이용해 안전한 로그인 API를 구현했어요.
     - 백엔드에서 카카오 로그인 API를 JWT와 연결하여 더욱 안전한 로그인 API를 설계했어요.
 
 
@@ -204,8 +204,7 @@
 <br /><sub><b>프론트엔드:김원표</b></sub></a></td>
     <td align="center"><a href="https://github.com/jangjia01234"><img width="180" alt="Group 427321947" src="https://user-images.githubusercontent.com/71865277/205436968-bb630e9e-52f8-4445-9536-52d73af4788f.png">
 <br /><sub><b>프론트엔드:장지아 (팀장)</b></sub></a></td>
-    <td align="center"><a href="https://github.com/echo724"><img width="180" alt="제주검독수리 카드 2차 수정" src="https://user-images.githubusercontent.com/71865277/205437006-e5dfe5c7-8fbc-4e53-bf9a-2f552b1c3c31.png">
+    <td align="center"><a href="https://github.com/echo724"><img width="180" alt="제주검독수리 카드 2차 수정" src="https://user-images.githubusercontent.com/71865277/205437006-e5dfe5c7-8fbc-4e53-bf9a-2f552b1c3c31.png">
 <br /><sub><b>백엔드:조은찬</b></sub></a></td>
     <td align="center"><a href="https://github.com/shs6626"><img width="180" alt="Group 427321952" src="https://user-images.githubusercontent.com/71865277/205437042-80c8879a-da5f-4c96-989e-7546facf0399.png">
 <br /><sub><b>기획:신홍석</b></sub></a></td>
-
