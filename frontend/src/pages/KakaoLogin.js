@@ -3,8 +3,6 @@ import { BACKEND_URL } from "../utils/Urls";
 import { checkAccessToken } from "../utils/Token";
 import { useEffect } from "react";
 import { setAuthorization } from "../utils/Token";
-import styled from "styled-components";
-import splashImg from "../assets/img/splash.png";
 
 const JWT_EXPIRE_TIME = 2 * 3600 * 1000; // expiration time(2 hours in milliseconds)
 

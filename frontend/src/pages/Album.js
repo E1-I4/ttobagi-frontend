@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import arrowLeft from "../assets/img/arrowLeft.png";
@@ -35,9 +36,9 @@ const Album = () => {
       <AppLayout>
         <Background>
           <Content>
-            <a href="/" style={{ marginTop: 50 }}>
-              <img src={arrowLeft} />
-            </a>
+            <Link href="/" style={{ marginTop: 50 }}>
+              <img src={arrowLeft} alt="arrow-left" />
+            </Link>
             <span
               style={{
                 margin: "25px 0 30px 0",
@@ -81,7 +82,7 @@ let Background = styled.div`
 let Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contents: left;
+  justify-content: flex-start;
   margin: 0 20px;
 `;
 

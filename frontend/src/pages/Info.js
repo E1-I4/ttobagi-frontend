@@ -15,13 +15,13 @@ const Info = () => {
         <Background>
           <Content>
             <a href="/album" style={{ marginTop: 50, marginBottom: 30 }}>
-              <img src={arrowLeft} />
+              <img src={arrowLeft} alt="arrow-left" />
             </a>
           </Content>
           <CenterBox>
             <ChaImg src={image} alt={name}></ChaImg>
             <span style={{ marginTop: 40, marginBottom: 10 }}>
-              <img src={animal_name} style={{ height: 35 }} />
+              <img src={animal_name} style={{ height: 35 }} alt="animal-name" />
             </span>
             <InfoBox>
               {description.split("\\").map((item) => (
@@ -49,7 +49,7 @@ let Background = styled.div`
 let Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contents: left;
+  justify-content: flex-start;
   margin: 0 20px;
 `;
 

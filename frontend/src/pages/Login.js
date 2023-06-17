@@ -29,7 +29,7 @@ const Login = () => {
             </SubTitle>
           </Title>
           <KakaoLoginBtn>
-            <img src={kLogin} onClick={handleLogin} />
+            <img src={kLogin} onClick={handleLogin} alt="kakao-login-btn" />
           </KakaoLoginBtn>
         </Background>
       </AppLayout>

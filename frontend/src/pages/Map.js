@@ -1,19 +1,16 @@
-/* global kakao */
 import React, { useEffect, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
-import { useNavigate } from "react-router-dom";
-import arrowLeft from "../assets/img/arrowLeft.png";
-import axios from "axios";
 import { BACKEND_URL } from "../utils/Urls";
 import { SillContainer } from "./SilContainer";
+import arrowLeft from "../assets/img/arrowLeft.png";
 
 const { kakao } = window;
 
 const Map = () => {
   const navigate = useNavigate();
-
-  const [isSilContainer, setSilContainer] = useState(false);
 
   const [animals, setAnimals] = useState({});
   const fetchData = async () => {
@@ -21,15 +18,15 @@ const Map = () => {
       .get(`${BACKEND_URL}/api/animals/`)
       .catch(function (error) {
         // error 확인 함수
-        // if (error.response) {
-        //   console.log(error.response.data);
-        //   console.log(error.response.status);
-        //   console.log(error.response.headers);
-        // } else if (error.request) {
-        //   console.log(error.request);
-        // } else {
-        //   console.log("Error", error.message);
-        // }
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
       });
     setAnimals(data);
   };
@@ -108,79 +105,43 @@ const Map = () => {
 
     // 마커를 표시할 위치와 title 객체 배열입니다
 
-    // console.log(id);
     var positions = [
       {
         id: 1,
         title: "제주특별자치도 제주시 아라일동 산 66-5",
         content: "<div>붉은박쥐</div>",
         latlng: new kakao.maps.LatLng(33.424496, 126.558734),
-        // sil: animals[0].sil,
       },
       {
         id: 2,
         title: "제주특별자치도 제주시 오등동 산 182",
         content: "<div>제주검독수리</div>",
         latlng: new kakao.maps.LatLng(33.376665, 126.542212),
-        // sil: animals[2].sil,
       },
       {
         id: 3,
         title: "제주특별자치도 서귀포시 상효동 산 1-2",
         content: "<div>비바리뱀</div>",
         latlng: new kakao.maps.LatLng(33.34696, 126.545547),
-        // sil: animals[3].sil,
       },
       {
         id: 4,
         title: "제주특별자치도 서귀포시 성산읍 성산리 78",
         content: "<div>나팔고둥</div>",
         latlng: new kakao.maps.LatLng(33.4587135, 126.9390786),
-        // sil: animals[4].sil
       },
       {
         id: 5,
         title: "제주특별자치도 서귀포시 대정읍 상모리 2973-8",
         content: "<div>갯게</div>",
         latlng: new kakao.maps.LatLng(33.218044, 126.264616),
-        // sil: animals[5].sil,
       },
-      // {
-      //   id: 6,
-      //   title: "제주특별자치도 서귀포시 성산읍 성산리 78",
-      //   content: "<div>팔색조</div>",
-      //   latlng: new kakao.maps.LatLng(33.452352, 126.917965),
-      // },
-      // 가짜 데이터
-      // {
-      //   title: "제주특별자치도 제주시 용담이동 2002",
-      //   content: "<div>뜸부기</div>",
-      //   latlng: new kakao.maps.LatLng(33.507071, 126.492764),
-      // },
-      // {
-      //   title: "제주특별자치도 제주시 조천읍 교래리 385-1",
-      //   content: "<div>검은머리갈매기</div>",
-      //   latlng: new kakao.maps.LatLng(33.44456, 126.6706021),
-      // },
-      // {
-      //   title: "제주특별자치도 서귀포시 색달동 1452",
-      //   content: "<div>큰말똥가리</div>",
-      //   latlng: new kakao.maps.LatLng(33.265844, 126.402451),
-      // },
-      // {
-      //   title: "제주특별자치도 서귀포시 성산읍 동류암로 20",
-      //   content: "<div>보너스</div>",
-      //   latlng: new kakao.maps.LatLng(33.45016393489062, 126.91834162629523),
-      // },
     ];
 
     // 마커 이미지의 이미지 주소입니다
     var imageSrc =
       "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
-    // console.log(animals); // 잘 불러와짐.. 근데 왜 for문이 안돌아가 ?
-    // animals?.length &&
-    // animals.map((animal) => {
     for (let i = 0; i < positions.length; i++) {
       // 마커 이미지의 이미지 크기 입니다
       var imageSize = new kakao.maps.Size(24, 35);
@@ -195,7 +156,7 @@ const Map = () => {
       // var latlng = new kakao.maps.LatLng(animal.latitude, animal.longtitude);
 
       let markerId = positions[i].id;
-      // let mapSil = positions[i].sil;
+
       // 마커를 생성합니다
       var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
@@ -203,7 +164,6 @@ const Map = () => {
         title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
         image: markerImage, // 마커 이미지
         id: markerId,
-        // sil: mapSil,
       });
 
       // 마커에 표시할 인포윈도우를 생성합니다
@@ -211,10 +171,6 @@ const Map = () => {
         content: positions[i].content, // 인포윈도우에 표시할 내용
       });
 
-      // var infowindow = new kakao.maps.CustomOverlay({
-      //   position: positions[i].latlng,
-      //   content: positions[i].content
-      // })
       // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
       // 이벤트 리스너로는 클로저를 만들어 등록합니다
       // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
@@ -254,29 +210,6 @@ const Map = () => {
         <div></div>;
       };
     }
-
-    ///////////////// 지도 도감 연동 테스트 /////////////////
-
-    //두 지점 간의 거리 계산
-
-    // function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-    //   var R = 6371; // Radius of the earth in km
-    //   var dLat = deg2rad(lat2 - lat1); // deg2rad below
-    //   var dLon = deg2rad(lon2 - lon1);
-    //   var a =
-    //     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    //     Math.cos(deg2rad(lat1)) *
-    //       Math.cos(deg2rad(lat2)) *
-    //       Math.sin(dLon / 2) *
-    //       Math.sin(dLon / 2);
-    //   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    //   var d = R * c; // Distance in km
-    //   return d;
-    // }
-
-    // function deg2rad(deg) {
-    //   return deg * (Math.PI / 180);
-    // }
   }, []);
 
   return (
@@ -284,9 +217,9 @@ const Map = () => {
       <AppLayout>
         <Background>
           <Content>
-            <a href="/" style={{ marginTop: 50, marginBottom: 10 }}>
-              <img src={arrowLeft} />
-            </a>
+            <Link href="/" style={{ marginTop: 50, marginBottom: 10 }}>
+              <img src={arrowLeft} alt="arrow-left" />
+            </Link>
             <div
               style={{
                 fontWeight: 800,
@@ -306,8 +239,6 @@ const Map = () => {
             <br></br>
           </Content>
           <MapContainer id="map"></MapContainer>
-          {/* <div id="location">여러분의 위치가 여기에 나타날 것입니다.</div>
-        <div id="distance">서울시청과의 거리가 여기에 나타날 것입니다.</div> */}
           <SillContainer animals={animals}></SillContainer>
         </Background>
       </AppLayout>
@@ -341,21 +272,3 @@ let MapContainer = styled.div`
   height: 380px;
   margin: 0 20px;
 `;
-
-// 고정 핀 찍기
-// var markerPosition = new kakao.maps.LatLng(33.385221, 126.524237);
-// var marker = new kakao.maps.Marker({
-//   position: markerPosition,
-// });
-// marker.setMap(map);
-
-// 지도 그리기
-// useEffect(() => {
-//   const container = document.getElementById("map");
-//   const options = {
-//     center: new window.kakao.maps.LatLng(33.385221, 126.524237),
-//     level: 11,
-//   };
-//   const map = new window.kakao.maps.Map(container, options);
-//   console.log("loading kakaomap");
-// }, []);

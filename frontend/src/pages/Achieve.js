@@ -60,7 +60,7 @@ const Achieve = () => {
         <Background>
           <Content>
             <HomeIcon href="/" style={{ marginTop: 50 }}>
-              <img src={homeIcon} />
+              <img src={homeIcon} alt="home-icon" />
             </HomeIcon>
             <Title>
               <span

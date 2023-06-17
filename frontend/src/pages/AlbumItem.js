@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { useNavigate } from "react-router-dom";
@@ -27,7 +28,7 @@ const AlbumItem = ({ animal, userAnimals }) => {
   };
 
   return (
-    <a onClick={onClick} id={id}>
+    <Link onClick={onClick} id={id}>
       {userAnimalsIdArr.includes(animal.id) ? (
         <ImgCard
           src={image}
@@ -38,7 +39,7 @@ const AlbumItem = ({ animal, userAnimals }) => {
       ) : (
         <ImgCard src={sil} alt={name} id={id}></ImgCard>
       )}
-    </a>
+    </Link>
   );
 };
 
