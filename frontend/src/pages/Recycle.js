@@ -65,11 +65,11 @@ const Recycle = () => {
 export default Recycle;
 
 let Background = styled.div`
-  width: 370px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 370px;
+  height: 100vh;
   background: white;
   font-weight: 800;
 `;
@@ -88,8 +88,8 @@ let Trash = styled.img`
 let Guide = styled.span`
   position: absolute;
   bottom: 80px;
+  color: var(--gray);
   font-size: 20px;
   font-weight: 800;
-  color: var(--gray);
   letter-spacing: -0.03em;
 `;

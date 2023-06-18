@@ -44,24 +44,24 @@ const Home = () => {
 export default Home;
 
 let Background = styled.div`
-  width: 370px;
-  height: 100vh;
-  box-shadow: none;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 370px;
+  height: 100vh;
   background-image: url(${bgImg});
   background-size: cover;
   letter-spacing: -0.03em;
+  box-shadow: none;
 `;
 
 let Title = styled.div`
-  text-align: center;
-  margin-bottom: 200px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  margin-bottom: 200px;
   font-weight: 800;
+  text-align: center;
+  gap: 20px;
 `;
 
 let SubTitle = styled.div`
@@ -69,18 +69,18 @@ let SubTitle = styled.div`
 `;
 
 let Button = styled.button`
-  font-size: 20px;
-  font-weight: 800;
-  border-radius: 24px;
   width: 300px;
   height: 70px;
-  border: none;
-  border-radius: 20px;
   margin-bottom: 15px;
   background: white;
   color: var(--darkgray);
+  font-size: 20px;
+  font-weight: 800;
+  border: none;
+  border-radius: 20px;
+
   &:hover {
-    cursor: pointer;
     background: var(--orange);
+    cursor: pointer;
   }
 `;

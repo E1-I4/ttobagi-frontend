@@ -38,10 +38,10 @@ const Info = () => {
 export default Info;
 
 let Background = styled.div`
-  width: 350px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 350px;
+  height: 100vh;
   background: white;
   font-weight: 800;
 `;
@@ -60,21 +60,21 @@ let CenterBox = styled.div`
 `;
 
 let ChaImg = styled.img`
-  border-radius: 25px;
   width: 180px;
   height: 220px;
   margin: 0 20px;
+  border-radius: 25px;
 `;
 
 let InfoBox = styled.div`
+  margin: 20px;
+  padding: 10px;
   font-size: 17px;
   font-weight: 800;
   color: var(--darkgray);
   background: transparent;
   background: var(--melange);
   border-radius: 25px;
-  padding: 10px;
-  margin: 20px;
   line-height: 27px;
   letter-spacing: -0.03em;
 `;

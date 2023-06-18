@@ -4,14 +4,15 @@ import AppLayout from "../components/AppLayout";
 import "../styles/theme.css";
 import kLogin from "../assets/img/klogin.png";
 import { ReactComponent as MainLogo } from "../assets/svg/logo_main.svg";
-import { REST_API_KEY } from "../.env";
+// import { REST_API_KEY } from "../.env";
 import { REDIRECT_URI } from "../utils/Urls";
 
 const Login = () => {
-  const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=account_email`;
+  // const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=account_email`;
 
   const handleLogin = () => {
-    window.location.href = KAKAO_AUTH_URL;
+    // window.location.href = KAKAO_AUTH_URL;
+    window.location.href = "";
   };
 
   return (
@@ -40,20 +41,20 @@ const Login = () => {
 export default Login;
 
 let Background = styled.div`
-  width: 370px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f3f9fd;
+  width: 370px;
+  height: 100vh;
   padding: 0 10px;
+  background-color: #f3f9fd;
 `;
 
 let Title = styled.div`
-  text-align: center;
-  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
+  text-align: center;
   gap: 20px;
 `;
 

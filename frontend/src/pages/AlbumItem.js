@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
-
-import { useNavigate } from "react-router-dom";
 
 const AlbumItem = ({ animal, userAnimals }) => {
   const navigate = useNavigate();
@@ -46,10 +44,11 @@ const AlbumItem = ({ animal, userAnimals }) => {
 export default AlbumItem;
 
 let ImgCard = styled.img`
-  border-radius: 25px;
   width: 100%;
   height: 100%;
   background: var(--melange);
+  border-radius: 25px;
+
   &:hover {
     cursor: pointer;
   }

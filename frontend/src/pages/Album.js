@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import arrowLeft from "../assets/img/arrowLeft.png";
-
-import axios from "axios";
 import AlbumItem from "./AlbumItem";
 import { BACKEND_URL } from "../utils/Urls";
 import { setAuthorization } from "../utils/Token";
@@ -71,10 +70,10 @@ const Album = () => {
 export default Album;
 
 let Background = styled.div`
-  width: 350px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 350px;
+  height: 100vh;
   background: white;
   font-weight: 800;
 `;
@@ -89,7 +88,7 @@ let Content = styled.div`
 let ImgListBlock = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin: 0 20px;
   height: 350px;
+  margin: 0 20px;
+  gap: 15px;
 `;

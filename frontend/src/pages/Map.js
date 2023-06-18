@@ -249,11 +249,10 @@ const Map = () => {
 export default Map;
 
 let Background = styled.div`
-  width: 350px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  // align-items: center;
+  width: 350px;
+  height: 100vh;
   background: white;
   letter-spacing: -0.03em;
 `;
@@ -261,14 +260,14 @@ let Background = styled.div`
 let Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contents: left;
+  justify-content: flex-start;
   width: 100%;
   margin: 0 20px;
 `;
 
 let MapContainer = styled.div`
-  border-radius: 20px;
   width: 310px;
   height: 380px;
   margin: 0 20px;
+  border-radius: 20px;
 `;

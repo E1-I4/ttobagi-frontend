@@ -16,16 +16,16 @@ export function SillContainer({ animals }) {
 }
 
 const Container = styled.div`
-  margin: auto 0 auto 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 20vh;
+  margin: auto 0 auto 0;
 `;
 
 const Content = styled.div`
-  color: var(--gray);
   margin: auto 20px;
+  color: var(--gray);
   font-size: 18px;
   font-weight: 700;
   line-height: 27px;

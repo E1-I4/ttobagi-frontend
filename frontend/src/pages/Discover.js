@@ -81,46 +81,44 @@ const Discover = () => {
 export default Discover;
 
 let Background = styled.div`
-  width: 370px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 370px;
+  height: 100vh;
   background: white;
   font-weight: 800;
 `;
 
 let Title = styled.div`
-  font-size: 26px;
-  font-weight: 800;
   display: flex;
   flex-direction: column;
-  text-align: left;
   margin: 50px 0 30px 0;
   margin: 80px 20px 40px 20px;
-  line-height: 140%;
   color: var(--darkgray);
+  font-size: 26px;
+  font-weight: 800;
+  text-align: left;
+  line-height: 140%;
 `;
 
 let ChaImg = styled.img`
-  border-radius: 20px;
   height: 300px;
-  margin-bottom: 20px;
   margin: 0 20px 120px 20px;
+  border-radius: 20px;
 `;
 
 let Button = styled.button`
-  font-size: 22px;
-  font-weight: 800;
+  height: 70px;
+  margin: 0 20px;
+  padding: 10px;
   background: var(--orange);
+  color: var(--darkgray);
+  font-size: 20px;
+  font-weight: 800;
   border: none;
   border-radius: 24px;
-  margin-top: 10px;
-  padding: 10px;
+
   &:hover {
     cursor: pointer;
   }
-  height: 70px;
-  font-size: 20px;
-  color: var(--darkgray);
-  margin: 0 20px;
 `;

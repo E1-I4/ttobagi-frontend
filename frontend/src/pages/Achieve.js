@@ -97,15 +97,15 @@ const Achieve = () => {
 export default Achieve;
 
 let Background = styled.div`
-  width: 370px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 370px;
+  height: 100vh;
   background: white;
-  font-weight: 800;
   background-image: url(${achBg});
   background-repeat: no-repeat;
   background-size: cover;
+  font-weight: 800;
 `;
 
 let Content = styled.div`
@@ -115,9 +115,9 @@ let Content = styled.div`
 `;
 
 let HomeIcon = styled.a`
-  color: black;
   display: flex;
   justify-content: flex-end;
+  color: black;
 `;
 
 let Title = styled.div`
@@ -134,21 +134,21 @@ let CenterBox = styled.div`
 `;
 
 let ChaImg = styled.img`
-  border-radius: 25px;
   width: 180px;
   height: 220px;
   margin: 0 20px;
+  border-radius: 25px;
 `;
 
 let InfoBox = styled.div`
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--darkgray);
+  margin: 20px;
+  padding: 10px;
   background: transparent;
   background: white;
+  color: var(--darkgray);
+  font-size: 17px;
+  font-weight: 800;
   border-radius: 25px;
-  padding: 10px;
-  margin: 20px;
   line-height: 27px;
   letter-spacing: -0.03em;
 `;
