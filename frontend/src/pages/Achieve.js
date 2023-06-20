@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 import styled from "styled-components";
 import AppLayout from "../components/AppLayout";
 import achBg from "../assets/img/achbg.png";
 import homeIcon from "../assets/img/homeIcon.png";
-import { useLocation } from "react-router-dom";
-import axios from "axios";
 import { BACKEND_URL } from "../utils/Urls";
 import { setAuthorization } from "../utils/Token";
 
@@ -59,32 +59,24 @@ const Achieve = () => {
       <AppLayout>
         <Background>
           <Content>
-            <HomeIcon href="/" style={{ marginTop: 50 }}>
+            <HomeIcon href="/">
               <img src={homeIcon} alt="home-icon" />
             </HomeIcon>
             <Title>
-              <span
-                style={{
-                  margin: 0,
-                  fontSize: 26,
-                  fontWeight: 800,
-                  color: "var(--darkgray)",
-                }}
-              >
-                <span style={{ color: "var(--orange)" }}>{name}</span>
-                {id === 3 || id === 4 ? <span>을</span> : <span>를</span>}{" "}
-                수집했어요!
-              </span>
+              <TitleText>
+                <TitleTextName>{name}</TitleTextName>
+                {id === 3 || id === 4 ? "을" : "를"} 수집했어요!
+              </TitleText>
             </Title>
           </Content>
           <CenterBox>
-            <ChaImg src={image} alt={name}></ChaImg>
-            <span style={{ marginTop: 30 }}>
-              <img src={animal_name_color} alt={name} style={{ height: 35 }} />
-            </span>
+            <CharacterImg src={image} alt={name}></CharacterImg>
+            <CharacterText>
+              <img src={animal_name_color} alt={name} />
+            </CharacterText>
             <InfoBox>
               {description.split("\\").map((item) => (
-                <Li style={{ wordBreak: "keep-all" }}>{item}</Li>
+                <Li>{item}</Li>
               ))}
             </InfoBox>
           </CenterBox>
@@ -117,6 +109,7 @@ let Content = styled.div`
 let HomeIcon = styled.a`
   display: flex;
   justify-content: flex-end;
+  margin-top: 50px;
   color: black;
 `;
 
@@ -127,17 +120,36 @@ let Title = styled.div`
   letter-spacing: -0.03em;
 `;
 
+let TitleText = styled.span`
+  margin: 0;
+  color: var(--darkgray);
+  font-size: 26;
+  font-weight: 800;
+`;
+
+let TitleTextName = styled.span`
+  color: var(--orange);
+`;
+
 let CenterBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-let ChaImg = styled.img`
+let CharacterImg = styled.img`
   width: 180px;
   height: 220px;
   margin: 0 20px;
   border-radius: 25px;
+`;
+
+let CharacterText = styled.div`
+  margin-top: 30;
+
+  img {
+    height: 35;
+  }
 `;
 
 let InfoBox = styled.div`
@@ -155,4 +167,5 @@ let InfoBox = styled.div`
 
 let Li = styled.ol`
   margin-left: -25px;
+  word-break: keep-all;
 `;

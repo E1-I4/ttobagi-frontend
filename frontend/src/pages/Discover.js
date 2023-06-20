@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import AppLayout from "../components/AppLayout";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import styled from "styled-components";
+import AppLayout from "../components/AppLayout";
 import { BACKEND_URL } from "../utils/Urls";
 import { setAuthorization } from "../utils/Token";
 
@@ -56,7 +56,7 @@ const Discover = () => {
   };
 
   return (
-    <div className="Discover">
+    <DiscoverContainer>
       <AppLayout>
         <Background>
           <Title>
@@ -64,8 +64,7 @@ const Discover = () => {
               {animals.trash_name} 때문에 아파하는
               <br></br>
               {animals.name}
-              {id === 3 || id === 4 ? <span>을</span> : <span>를</span>}{" "}
-              발견했어요
+              {id === 3 || id === 4 ? "을" : "를"} 발견했어요
             </span>
           </Title>
           <ChaImg src={animals.sick} alt={animals.name}></ChaImg>
@@ -74,11 +73,13 @@ const Discover = () => {
           </Button>
         </Background>
       </AppLayout>
-    </div>
+    </DiscoverContainer>
   );
 };
 
 export default Discover;
+
+let DiscoverContainer = styled.div``;
 
 let Background = styled.div`
   display: flex;

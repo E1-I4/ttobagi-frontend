@@ -3,12 +3,12 @@ import styled from "styled-components";
 import "../styles/theme.css";
 
 const AppLayout = ({ children }) => {
-  return <Box>{children}</Box>;
+  return <AppLayoutContainer>{children}</AppLayoutContainer>;
 };
 
 export default AppLayout;
 
-let Box = styled.div`
+let AppLayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

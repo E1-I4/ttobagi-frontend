@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
+import styled from "styled-components";
 
 const AuthLayout = () => {
   const navigate = useNavigate();
@@ -10,10 +11,14 @@ const AuthLayout = () => {
   }, []);
 
   return (
-    <div style={{ position: "relative" }}>
+    <AuthLayoutContainer>
       <Outlet />
-    </div>
+    </AuthLayoutContainer>
   );
 };
+
+const AuthLayoutContainer = styled.div`
+  position: "relative";
+`;
 
 export default AuthLayout;

@@ -16,32 +16,32 @@ const Home = () => {
   };
 
   return (
-    <div className="Home">
+    <HomeContainer>
       <AppLayout>
         <Background>
-          <Title style={{ marginTop: 175 }}>
+          <Title>
             <MainLogo />
             <SubTitle>
-              <span style={{ color: "var(--gray)" }}>
+              <SubTitleGray>
                 제주도의
                 <span style={{ color: "var(--orange)" }}> 멸종위기 동물</span>을
                 위한 도감
-              </span>
+              </SubTitleGray>
             </SubTitle>
           </Title>
           <>
-            <Button onClick={navigateToMapPage} style={{ marginTop: 15 }}>
-              서식지도
-            </Button>
+            <Button onClick={navigateToMapPage}>서식지도</Button>
             <Button onClick={navigateToAlbumPage}>도감</Button>
           </>
         </Background>
       </AppLayout>
-    </div>
+    </HomeContainer>
   );
 };
 
 export default Home;
+
+let HomeContainer = styled.div``;
 
 let Background = styled.div`
   display: flex;
@@ -58,6 +58,7 @@ let Background = styled.div`
 let Title = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 175px;
   margin-bottom: 200px;
   font-weight: 800;
   text-align: center;
@@ -68,9 +69,14 @@ let SubTitle = styled.div`
   font-size: 19px;
 `;
 
+let SubTitleGray = styled.span`
+  color: var(--gray);
+`;
+
 let Button = styled.button`
   width: 300px;
   height: 70px;
+  margin-top: 15px;
   margin-bottom: 15px;
   background: white;
   color: var(--darkgray);

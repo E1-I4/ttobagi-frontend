@@ -35,21 +35,14 @@ const Album = () => {
       <AppLayout>
         <Background>
           <Content>
-            <Link href="/" style={{ marginTop: 50 }}>
+            <Link href="/" style={{}}>
               <img src={arrowLeft} alt="arrow-left" />
             </Link>
-            <span
-              style={{
-                margin: "25px 0 30px 0",
-                fontSize: 26,
-                color: "var(--darkgray)",
-                fontWeight: 800,
-              }}
-            >
+            <ContentTitle>
               지금까지 수집한
               <br></br>
               동물들이에요
-            </span>
+            </ContentTitle>
           </Content>
           <ImgListBlock>
             {animals?.length &&
@@ -83,6 +76,13 @@ let Content = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   margin: 0 20px;
+`;
+
+let ContentTitle = styled.span`
+  margin: 25px 0 30px 0;
+  color: var(--darkgray);
+  font-size: 26px;
+  font-weight: 800;
 `;
 
 let ImgListBlock = styled.div`
