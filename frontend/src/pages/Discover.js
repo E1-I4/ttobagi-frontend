@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../styles/AppLayout";
 import { BACKEND_URL } from "../utils/Urls";
 import { setAuthorization } from "../utils/Token";
 

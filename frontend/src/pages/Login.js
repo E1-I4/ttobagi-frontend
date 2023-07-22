@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../styles/AppLayout";
 import "../styles/theme.css";
 import kLogin from "../assets/img/klogin.png";
 import { ReactComponent as MainLogo } from "../assets/svg/logo_main.svg";

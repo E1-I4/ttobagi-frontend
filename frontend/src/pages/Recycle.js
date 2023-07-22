@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../styles/AppLayout";
 import "../styles/theme.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { DndContext } from "@dnd-kit/core";

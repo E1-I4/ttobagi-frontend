@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../styles/AppLayout";
 import arrowLeft from "../assets/img/arrowLeft.png";
 import { useLocation } from "react-router-dom";
 

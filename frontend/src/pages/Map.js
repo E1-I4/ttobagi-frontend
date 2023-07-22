@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../styles/AppLayout";
 import { BACKEND_URL } from "../utils/Urls";
 import { SillContainer } from "./SilContainer";
 import arrowLeft from "../assets/img/arrowLeft.png";

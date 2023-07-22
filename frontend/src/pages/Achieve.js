@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../styles/AppLayout";
 import achBg from "../assets/img/achbg.png";
 import homeIcon from "../assets/img/homeIcon.png";
 import { BACKEND_URL } from "../utils/Urls";
