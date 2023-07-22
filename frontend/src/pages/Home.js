@@ -1,19 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import AppLayout from "../styles/AppLayout";
 import "../styles/theme.css";
-import bgImg from "../assets/img/mainbg.png";
-import { useNavigate } from "react-router-dom";
 import { ReactComponent as MainLogo } from "../assets/svg/logo_main.svg";
+import bgImg from "../assets/img/mainbg.png";
 
 const Home = () => {
   const navigate = useNavigate();
-  const navigateToAlbumPage = () => {
-    navigate("/album");
-  };
-  const navigateToMapPage = () => {
-    navigate("/map");
-  };
+
+  const navigateToAlbumPage = () => navigate("/album");
+  const navigateToMapPage = () => navigate("/map");
 
   return (
     <HomeContainer>

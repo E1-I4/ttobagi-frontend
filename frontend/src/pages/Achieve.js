@@ -22,7 +22,9 @@ const Achieve = () => {
 
     const { data } = await axios
       .get(`${BACKEND_URL}/api/animals/${id}`)
-      .catch(function (error) {});
+      .catch(function (error) {
+        console.error(error);
+      });
     setAnimals(data);
   };
 
@@ -39,16 +41,17 @@ const Achieve = () => {
           console.log(response);
         })
         .catch(function (error) {
-          console.log(error);
+          console.error(error);
         })
         .finally(function (data) {
           console.log(data);
         });
       console.log(res);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
+
   useEffect(() => {
     fetchData();
     sendData();

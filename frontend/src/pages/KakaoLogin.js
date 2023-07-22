@@ -4,7 +4,7 @@ import { checkAccessToken } from "../utils/Token";
 import { useEffect } from "react";
 import { setAuthorization } from "../utils/Token";
 
-const JWT_EXPIRE_TIME = 2 * 3600 * 1000; // expiration time(2 hours in milliseconds)
+const JWT_EXPIRE_TIME = 2 * 3600 * 1000;
 
 const KakaoLogin = () => {
   const location = useLocation();
@@ -25,12 +25,11 @@ const KakaoLogin = () => {
           checkAccessToken,
           JWT_EXPIRE_TIME - 60000,
           res.refresh_token
-        ); // 1 minute before expiration
+        );
         navigate("/");
       });
   }, []);
   return <></>;
-  //이쪽에 스플래시를 넣어봅시다
 };
 
 export default KakaoLogin;

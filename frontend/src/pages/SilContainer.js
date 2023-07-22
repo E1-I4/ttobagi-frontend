@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as MapSil } from "../assets/svg/mapSil.svg";
 
-export function SillContainer({ animals }) {
+export function SillContainer() {
   return (
     <Container>
       <Content>

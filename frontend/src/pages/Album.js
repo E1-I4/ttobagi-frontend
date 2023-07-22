@@ -26,6 +26,7 @@ const Album = () => {
     );
     setUserAnimals(userData);
   };
+
   useEffect(() => {
     fetchData();
   }, []);

@@ -28,14 +28,9 @@ const AlbumItem = ({ animal, userAnimals }) => {
   return (
     <Link onClick={onClick} id={id}>
       {userAnimalsIdArr.includes(animal.id) ? (
-        <ImgCard
-          src={image}
-          alt={name}
-          description={description}
-          id={id}
-        ></ImgCard>
+        <ImgCard src={image} alt={name} description={description} id={id} />
       ) : (
-        <ImgCard src={sil} alt={name} id={id}></ImgCard>
+        <ImgCard src={sil} alt={name} id={id} />
       )}
     </Link>
   );
